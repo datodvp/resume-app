@@ -1,0 +1,24 @@
+.person-form {
+  width: 1920px;
+  min-height: 1080px;
+  display: flex;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  hr {
+    margin-top: 12px;
+    margin-bottom: 77px;
+  }
+
+  .form {
+    width: 57%;
+    padding: 47px 150px 65px 150px;
+    background-color: #f9f9f9;
+  }
+  .resume {
+    width: 43%;
+  }
+}
