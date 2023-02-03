@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import PersonForm from './pages/PersonForm/PersonForm';
 
 const App = () => {
+  // resets whole user data if reset button is clicked
   const [userData, setUserData] = useState({
     name: '',
     surname: '',
@@ -35,7 +36,7 @@ const App = () => {
       <Route path="/" element={<Home />}></Route>
       <Route
         path="PersonForm"
-        element={<PersonForm userData={userData} />}
+        element={<PersonForm userData={userData} setUserData={setUserData} />}
       ></Route>
     </Routes>
   );
