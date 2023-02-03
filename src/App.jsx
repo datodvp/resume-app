@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import PersonForm from './pages/PersonForm/PersonForm';
+import PersonForm from './pages/PersonForm';
+import ExperienceForm from './pages/ExperienceForm';
+import EducationForm from './pages/EducationForm/EducationForm';
 
 const App = () => {
   // resets whole user data if reset button is clicked
@@ -37,6 +39,18 @@ const App = () => {
       <Route
         path="PersonForm"
         element={<PersonForm userData={userData} setUserData={setUserData} />}
+      ></Route>
+      <Route
+        path="ExperienceForm"
+        element={
+          <ExperienceForm userData={userData} setUserData={setUserData} />
+        }
+      ></Route>
+      <Route
+        path="EducationForm"
+        element={
+          <EducationForm userData={userData} setUserData={setUserData} />
+        }
       ></Route>
     </Routes>
   );
