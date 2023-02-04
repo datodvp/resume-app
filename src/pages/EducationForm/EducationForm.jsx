@@ -8,10 +8,7 @@ const EducationForm = () => {
   const formPage = '3/3';
   return (
     <div className="experience-form">
-      <ResetButton />
-      <form className="form">
-        <FormHeader title={formTitle} page={formPage} />
-      </form>
+      <FormHeader title={formTitle} page={formPage} />
       <div className="resume"></div>
     </div>
   );

@@ -4,7 +4,7 @@ import BackArrowImg from '../../assets/images/BackArrowImg.svg';
 import './styles.scss';
 
 const ResetButton = ({ setUserData }) => {
-  const handleClick = () => {
+  const handleClick = (e) => {
     setUserData({
       name: '',
       surname: '',
@@ -32,7 +32,7 @@ const ResetButton = ({ setUserData }) => {
     });
   };
   return (
-    <Link className="reset-button" to="/" onClick={handleClick}>
+    <Link className="reset-button" to="/">
       <img src={BackArrowImg}></img>
     </Link>
   );

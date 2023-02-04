@@ -7,10 +7,7 @@ const PersonForm = ({ userData, setUserData }) => {
   const formPage = '1/3';
   return (
     <div className="person-form">
-      <ResetButton setUserData={setUserData} />
-      <form className="form">
-        <FormHeader title={formTitle} page={formPage} />
-      </form>
+      <FormHeader title={formTitle} page={formPage} />
       <div className="resume"></div>
     </div>
   );
