@@ -7,7 +7,12 @@ const PersonForm = ({ userData, setUserData }) => {
   const formPage = '1/3';
   return (
     <div className="person-form">
-      <FormHeader title={formTitle} page={formPage} />
+      <div className="form">
+        <FormHeader title={formTitle} page={formPage} />
+        <label htmlFor="name" className="name">
+          სახელი
+        </label>
+      </div>
       <Resume />
     </div>
   );
