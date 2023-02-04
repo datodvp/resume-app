@@ -17,11 +17,11 @@ const Resume = () => {
             {userData.name} {userData.surname}
           </h1>
           <div className="email-container">
-            <img src={EmailImg}></img>
+            <img src={EmailImg} alt="email-icon"></img>
             <p className="email">{userData.email}</p>
           </div>
           <div className="phone-container">
-            <img src={PhoneImg}></img>
+            <img src={PhoneImg} alt="phone-icon"></img>
             <p className="phone">{userData.phone_number}</p>
           </div>
           <div className="about-me-container">
@@ -30,7 +30,7 @@ const Resume = () => {
           </div>
         </div>
 
-        <img className="person-img" src={PersonImg} alt="person image"></img>
+        <img className="person-img" src={PersonImg} alt="person"></img>
       </div>
       <hr></hr>
     </div>
