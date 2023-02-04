@@ -4,36 +4,9 @@ import BackArrowImg from '../../assets/images/BackArrowImg.svg';
 import './styles.scss';
 
 const ResetButton = ({ setUserData }) => {
-  const handleClick = (e) => {
-    setUserData({
-      name: '',
-      surname: '',
-      email: '',
-      phone_number: '',
-      experiences: [
-        {
-          position: '',
-          employer: '',
-          start_date: '',
-          due_date: '',
-          description: '',
-        },
-      ],
-      educations: [
-        {
-          institute: '',
-          degree: '',
-          due_date: '',
-          description: '',
-        },
-      ],
-      image: '',
-      about_me: '',
-    });
-  };
   return (
     <Link className="reset-button" to="/">
-      <img src={BackArrowImg}></img>
+      <img src={BackArrowImg} alt="back button"></img>
     </Link>
   );
 };

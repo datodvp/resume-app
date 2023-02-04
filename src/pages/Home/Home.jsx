@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles.scss';
 import BackgroundImg from './Images/BackgroundImg.png';
 import SealImg from './Images/SealImg.png';

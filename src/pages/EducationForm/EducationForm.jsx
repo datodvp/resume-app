@@ -1,5 +1,4 @@
 import React from 'react';
-import ResetButton from '../../components/ResetButton';
 import FormHeader from '../../components/FormHeader';
 import './styles.scss';
 

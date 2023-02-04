@@ -1,6 +1,5 @@
 import './styles.scss';
 import FormHeader from '../../components/FormHeader';
-import ResetButton from '../../components/ResetButton';
 
 const PersonForm = ({ userData, setUserData }) => {
   const formTitle = 'პირადი ინფო';
