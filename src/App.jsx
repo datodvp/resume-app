@@ -9,10 +9,10 @@ import { UserContext } from './context/UserContext';
 const App = () => {
   // resets whole user data if reset button is clicked
   const [userData, setUserData] = useState({
-    name: '',
-    surname: '',
-    email: '',
-    phone_number: '',
+    name: 'ანზორი',
+    surname: 'მუმლაძე',
+    email: 'anzori@redberry.ge',
+    phone_number: '+995551851717',
     experiences: [
       {
         position: '',
@@ -31,7 +31,8 @@ const App = () => {
       },
     ],
     image: '',
-    about_me: '',
+    about_me: `ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ 
+    ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ.`,
   });
 
   return (

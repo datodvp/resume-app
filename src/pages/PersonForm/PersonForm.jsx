@@ -1,5 +1,6 @@
 import './styles.scss';
 import FormHeader from '../../components/FormHeader';
+import Resume from '../../components/Resume/Resume';
 
 const PersonForm = ({ userData, setUserData }) => {
   const formTitle = 'პირადი ინფო';
@@ -7,7 +8,7 @@ const PersonForm = ({ userData, setUserData }) => {
   return (
     <div className="person-form">
       <FormHeader title={formTitle} page={formPage} />
-      <div className="resume"></div>
+      <Resume />
     </div>
   );
 };

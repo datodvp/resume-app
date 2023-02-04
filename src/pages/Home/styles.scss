@@ -1,6 +1,6 @@
 .home {
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
 
   hr {
     position: absolute;
-    width: 1780px;
+    width: 92%;
     top: 89px;
     left: 70px;
     z-index: 1;
@@ -24,8 +24,8 @@
 
   .seal-img {
     position: absolute;
-    top: 473px;
-    right: 545px;
+    top: 43%;
+    right: 30%;
     z-index: 1;
   }
 
