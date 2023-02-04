@@ -1,0 +1,14 @@
+.education-form {
+  width: 1920px;
+  min-height: 1080px;
+  display: flex;
+
+  .form {
+    width: 57%;
+    padding: 47px 150px 65px 150px;
+    background-color: #f9f9f9;
+  }
+  .resume {
+    width: 43%;
+  }
+}
