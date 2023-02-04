@@ -9,8 +9,8 @@ import { UserContext } from './context/UserContext';
 const App = () => {
   // resets whole user data if reset button is clicked
   const [userData, setUserData] = useState({
-    name: 'ანზორი',
-    surname: 'მუმლაძე',
+    name: '',
+    surname: '',
     email: 'anzori@redberry.ge',
     phone_number: '+995551851717',
     experiences: [
