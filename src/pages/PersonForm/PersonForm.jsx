@@ -34,6 +34,7 @@ const PersonForm = () => {
         <div className="name-surname">
           <TextInput
             title="სახელი"
+            name="name"
             placeholder="ანზორი"
             hint="მინიმუმ 2 ასო, ქართული ასოები"
             size="small"
@@ -41,6 +42,7 @@ const PersonForm = () => {
           />
           <TextInput
             title="გვარი"
+            name="surname"
             placeholder="მუმლაძე"
             hint="მინიმუმ 2 ასო, ქართული ასოები"
             size="small"
@@ -52,7 +54,12 @@ const PersonForm = () => {
           <button type="button" onClick={handleUploadClick}>
             ატვირთვა
           </button>
-          <input type="file" id="getFile" onChange={displayImage} />
+          <input
+            type="file"
+            name="image"
+            id="getFile"
+            onChange={displayImage}
+          />
         </label>
         <AboutMeInput
           title="ჩემს შესახებ (არასავალდებულო)"

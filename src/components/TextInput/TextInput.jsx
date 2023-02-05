@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 import SuccessImg from '../../assets/images/SuccessImg.png';
 import FailureImg from '../../assets/images/FailureImg.png';
 import './styles.scss';
 
-const TextInput = ({ title, placeholder, hint, size, propertyName }) => {
+const TextInput = ({ title, name, placeholder, hint, size, propertyName }) => {
+  // checks if text input should be small or large
   switch (size) {
     case 'small':
       size = 371;
@@ -15,7 +16,7 @@ const TextInput = ({ title, placeholder, hint, size, propertyName }) => {
     default:
       size = 798;
   }
-  const [validationImg, setValidationImg] = useState(SuccessImg);
+
   const { userData, setUserData } = useContext(UserContext);
 
   const handleChange = (e) => {
@@ -51,9 +52,10 @@ const TextInput = ({ title, placeholder, hint, size, propertyName }) => {
           value={userData[propertyName]}
           onChange={handleChange}
           pattern="^[ა-ჰ]{2,}"
+          name={name}
           required
         ></input>
-        <img className="" src={validationImg} alt="success"></img>
+        <img className="" src={SuccessImg} alt="success"></img>
       </div>
 
       <span className="hint">{hint}</span>
