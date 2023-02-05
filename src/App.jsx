@@ -27,12 +27,11 @@ const App = () => {
         institute: '',
         degree: '',
         due_date: '',
-        description: '',
+        description: 'ddd',
       },
     ],
     image: '',
-    about_me: `ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ 
-    ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ.`,
+    about_me: '',
   });
 
   return (

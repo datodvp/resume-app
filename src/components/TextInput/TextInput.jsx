@@ -37,7 +37,7 @@ const TextInput = ({ title, placeholder, hint, size, propertyName }) => {
   };
 
   return (
-    <label className="label" style={{ width: size }}>
+    <label className="text-input-label" style={{ width: size }}>
       {title}
       <input
         type="text"

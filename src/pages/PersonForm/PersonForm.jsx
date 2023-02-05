@@ -4,6 +4,7 @@ import './styles.scss';
 import FormHeader from '../../components/FormHeader';
 import Resume from '../../components/Resume/Resume';
 import TextInput from '../../components/TextInput';
+import AboutMeInput from './components/AboutMe/AboutMeInput';
 
 const PersonForm = () => {
   const formTitle = 'პირადი ინფო';
@@ -53,6 +54,11 @@ const PersonForm = () => {
           </button>
           <input type="file" id="getFile" onChange={displayImage} />
         </label>
+        <AboutMeInput
+          title="ჩემს შესახებ (არასავალდებულო)"
+          placeholder="ზოგადი ინფო შენს შესახებ"
+          propertyName="about_me"
+        />
       </form>
       <Resume />
     </div>
