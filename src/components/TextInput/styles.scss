@@ -4,6 +4,13 @@
   font-weight: 600;
   line-height: 21px;
 
+  &.success {
+    color: black;
+  }
+  &.failure {
+    color: #e52f2f;
+  }
+
   .input-container {
     position: relative;
     display: flex;
@@ -23,6 +30,14 @@
 
       &:focus {
         outline: 1px solid #bcbcbc;
+      }
+
+      &.success {
+        border: 1px solid #98e37e;
+      }
+
+      &.failure {
+        border: 1px solid #ef5050;
       }
     }
     img {

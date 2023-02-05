@@ -2,24 +2,18 @@ import React, { useContext } from 'react';
 import { UserContext } from '../../../../context/UserContext';
 import './styles.scss';
 
-const AboutMeInput = ({ title, placeholder, propertyName }) => {
-  const { userData, setUserData } = useContext(UserContext);
+const AboutMeInput = ({ title, placeholder, name }) => {
+  const { formik } = useContext(UserContext);
 
-  const handleChange = (e) => {
-    setUserData({
-      ...userData,
-      [propertyName]: e.target.value,
-    });
-  };
   return (
     <label className="TextArea-label">
       {title}
       <textarea
+        name={name}
         placeholder={placeholder}
-        value={userData[propertyName]}
-        onChange={handleChange}
+        value={formik.values[name]}
+        onChange={formik.handleChange}
         maxLength="200"
-        required
       ></textarea>
     </label>
   );

@@ -10,7 +10,7 @@ const PersonForm = () => {
   const formTitle = 'პირადი ინფო';
   const formPage = '1/3';
 
-  const { userData, setUserData } = useContext(UserContext);
+  const { formik, setImagePreview } = useContext(UserContext);
 
   const handleUploadClick = (e) => {
     const uploadInput = document.querySelector('#getFile');
@@ -22,14 +22,14 @@ const PersonForm = () => {
     var file = fileInput.files[0];
     var reader = new FileReader();
     reader.onload = (e) => {
-      setUserData({ ...userData, image: e.target.result });
+      setImagePreview(e.target.result);
     };
     reader.readAsDataURL(file);
   };
 
   return (
     <div className="person-form">
-      <form className="form">
+      <form onSubmit={formik.handleSubmit} className="form">
         <FormHeader title={formTitle} page={formPage} />
         <div className="name-surname">
           <TextInput
@@ -38,7 +38,6 @@ const PersonForm = () => {
             placeholder="ანზორი"
             hint="მინიმუმ 2 ასო, ქართული ასოები"
             size="small"
-            propertyName="name"
           />
           <TextInput
             title="გვარი"
@@ -46,10 +45,13 @@ const PersonForm = () => {
             placeholder="მუმლაძე"
             hint="მინიმუმ 2 ასო, ქართული ასოები"
             size="small"
-            propertyName="surname"
           />
         </div>
-        <label className="photo-upload">
+        <label
+          className={`photo-upload ${
+            formik.touched.image && formik.errors.image ? 'failure' : 'success'
+          }`}
+        >
           პირადი ფოტოს ატვირთვა
           <button type="button" onClick={handleUploadClick}>
             ატვირთვა
@@ -58,14 +60,18 @@ const PersonForm = () => {
             type="file"
             name="image"
             id="getFile"
-            onChange={displayImage}
+            onChange={(e) => {
+              formik.setFieldValue('image', e.target.files[0]);
+              displayImage(e);
+            }}
           />
         </label>
         <AboutMeInput
           title="ჩემს შესახებ (არასავალდებულო)"
           placeholder="ზოგადი ინფო შენს შესახებ"
-          propertyName="about_me"
+          name="about_me"
         />
+        <button type="submit">DAACHIRE</button>
       </form>
       <Resume />
     </div>

@@ -4,38 +4,24 @@ import Home from './pages/Home';
 import PersonForm from './pages/PersonForm';
 import ExperienceForm from './pages/ExperienceForm';
 import EducationForm from './pages/EducationForm/EducationForm';
+import { useFormik } from 'formik';
 import { UserContext } from './context/UserContext';
+import validationSchema from './schema/ValidationSchema';
+import initialValues from './schema/InitialValues';
 
 const App = () => {
-  // resets whole user data if reset button is clicked
-  const [userData, setUserData] = useState({
-    name: '',
-    surname: '',
-    email: 'anzori@redberry.ge',
-    phone_number: '+995551851717',
-    experiences: [
-      {
-        position: '',
-        employer: '',
-        start_date: '',
-        due_date: '',
-        description: '',
-      },
-    ],
-    educations: [
-      {
-        institute: '',
-        degree: '',
-        due_date: '',
-        description: 'ddd',
-      },
-    ],
-    image: '',
-    about_me: '',
+  const [imagePreview, setImagePreview] = useState();
+
+  const formik = useFormik({
+    initialValues,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+    validationSchema,
   });
 
   return (
-    <UserContext.Provider value={{ userData, setUserData }}>
+    <UserContext.Provider value={{ formik, imagePreview, setImagePreview }}>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="PersonForm" element={<PersonForm />}></Route>

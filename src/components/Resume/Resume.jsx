@@ -6,34 +6,37 @@ import EmailImg from '../../assets/images/EmailImg.png';
 import PhoneImg from '../../assets/images/PhoneImg.png';
 
 const Resume = () => {
-  const { userData } = useContext(UserContext);
+  const { formik, imagePreview } = useContext(UserContext);
+
   return (
     <div className="resume">
       <img className="logo" src={ResumeLogoImg} alt="resume logo"></img>
       <div className="person">
         <div className="info">
           <h1 className="name-surname">
-            {userData.name} {userData.surname}
+            {formik.values.name} {formik.values.surname}
           </h1>
           <div className="email-container">
             <img src={EmailImg} alt="email-icon"></img>
-            <p className="email">{userData.email}</p>
+            <p className="email">{formik.values.email}</p>
           </div>
           <div className="phone-container">
             <img src={PhoneImg} alt="phone-icon"></img>
-            <p className="phone">{userData.phone_number}</p>
+            <p className="phone">{formik.values.phone_number}</p>
           </div>
           <div className="about-me-container">
             <h2 className="title">ჩემს შესახებ</h2>
-            <p className="about-me">{userData.about_me}</p>
+            <p className="about-me">{formik.values.about_me}</p>
           </div>
         </div>
 
         <img
           className="person-img"
-          src={userData.image}
+          src={imagePreview}
           alt="person"
-          style={userData.image ? { display: 'block' } : { display: 'none' }}
+          style={
+            formik.values.image ? { display: 'block' } : { display: 'none' }
+          }
         ></img>
       </div>
       <hr></hr>
