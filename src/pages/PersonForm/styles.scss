@@ -12,6 +12,33 @@
       display: flex;
       justify-content: space-between;
     }
+
+    .photo-upload {
+      margin-top: 54px;
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 22px;
+
+      input {
+        display: none;
+      }
+
+      button {
+        margin-left: 19px;
+        height: 27px;
+        width: 107px;
+        border-radius: 4px;
+        border: none;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+
+        background-color: #0e80bf;
+        color: white;
+      }
+    }
   }
 
   .resume {
