@@ -4,20 +4,42 @@
   font-weight: 600;
   line-height: 21px;
 
-  input {
-    height: 48px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 13px 16px;
-    border: 1px solid #bcbcbc;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    background-repeat: no-repeat;
-    background-position: 96% center;
+  .input-container {
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 
-    &:focus {
-      outline: 1px solid #bcbcbc;
+    input {
+      height: 48px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 13px 16px;
+      border: 1px solid #bcbcbc;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      width: 100%;
+
+      &:focus {
+        outline: 1px solid #bcbcbc;
+      }
+    }
+    img {
+      display: none;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+
+      &.success {
+        display: block;
+        right: 10px;
+      }
+
+      &.failure {
+        display: block;
+        right: -36px;
+      }
     }
   }
 

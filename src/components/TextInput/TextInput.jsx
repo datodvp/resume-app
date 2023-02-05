@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../../context/UserContext';
 import SuccessImg from '../../assets/images/SuccessImg.png';
 import FailureImg from '../../assets/images/FailureImg.png';
@@ -15,7 +15,7 @@ const TextInput = ({ title, placeholder, hint, size, propertyName }) => {
     default:
       size = 798;
   }
-
+  const [validationImg, setValidationImg] = useState(SuccessImg);
   const { userData, setUserData } = useContext(UserContext);
 
   const handleChange = (e) => {
@@ -24,29 +24,38 @@ const TextInput = ({ title, placeholder, hint, size, propertyName }) => {
 
     const labelStyle = e.target.parentElement.style;
     const inputStyle = e.target.style;
+    const validityElement = e.target.nextSibling;
 
     if (!e.target.checkValidity()) {
       labelStyle.color = '#E52F2F';
       inputStyle.border = '1px solid #EF5050';
-      inputStyle.backgroundImage = `url(${FailureImg})`;
+      validityElement.classList.remove('success');
+      validityElement.classList.add('failure');
+      validityElement.src = FailureImg;
     } else {
       labelStyle.color = 'black';
       inputStyle.border = '1px solid #98E37E';
-      inputStyle.backgroundImage = `url(${SuccessImg})`;
+      validityElement.classList.remove('failure');
+      validityElement.classList.add('success');
+      validityElement.src = SuccessImg;
     }
   };
 
   return (
     <label className="text-input-label" style={{ width: size }}>
       {title}
-      <input
-        type="text"
-        placeholder={placeholder}
-        value={userData[propertyName]}
-        onChange={handleChange}
-        pattern="^[ა-ჰ]{2,}"
-        required
-      ></input>
+      <div className="input-container">
+        <input
+          type="text"
+          placeholder={placeholder}
+          value={userData[propertyName]}
+          onChange={handleChange}
+          pattern="^[ა-ჰ]{2,}"
+          required
+        ></input>
+        <img className="" src={validationImg} alt="success"></img>
+      </div>
+
       <span className="hint">{hint}</span>
     </label>
   );
