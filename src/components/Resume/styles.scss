@@ -11,10 +11,14 @@ $header-color: #f93b1d;
     justify-content: space-between;
 
     .info {
+      width: 424px;
+
       .name-surname {
         color: $header-color;
         font-size: 34px;
         margin-bottom: 17px;
+        overflow-wrap: break-word;
+        max-width: 100%;
       }
       .email-container {
         display: flex;
@@ -25,6 +29,8 @@ $header-color: #f93b1d;
         .email {
           font-size: 18px;
           line-height: 21px;
+          overflow-wrap: break-word;
+          max-width: 100%;
         }
       }
       .phone-container {
@@ -35,6 +41,8 @@ $header-color: #f93b1d;
 
         .phone {
           font-size: 18px;
+          overflow-wrap: break-word;
+          max-width: 100%;
         }
       }
 
@@ -68,6 +76,6 @@ $header-color: #f93b1d;
   }
 
   hr {
-    color: #c8c8c8;
+    border: 1px solid #c8c8c8;
   }
 }
