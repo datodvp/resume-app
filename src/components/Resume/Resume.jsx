@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import ResumeLogoImg from '../../assets/images/ResumeLogoImg.png';
 import { UserContext } from '../../context/UserContext';
 import './styles.scss';
-import PersonImg from '../../assets/images/PersonImg.png';
 import EmailImg from '../../assets/images/EmailImg.png';
 import PhoneImg from '../../assets/images/PhoneImg.png';
 
@@ -30,7 +29,12 @@ const Resume = () => {
           </div>
         </div>
 
-        <img className="person-img" src={PersonImg} alt="person"></img>
+        <img
+          className="person-img"
+          src={userData.image}
+          alt="person"
+          style={userData.image ? { display: 'block' } : { display: 'none' }}
+        ></img>
       </div>
       <hr></hr>
     </div>

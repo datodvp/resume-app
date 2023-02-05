@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 import './styles.scss';
 import FormHeader from '../../components/FormHeader';
 import Resume from '../../components/Resume/Resume';
@@ -7,9 +9,21 @@ const PersonForm = () => {
   const formTitle = 'პირადი ინფო';
   const formPage = '1/3';
 
+  const { userData, setUserData } = useContext(UserContext);
+
   const handleUploadClick = (e) => {
     const uploadInput = document.querySelector('#getFile');
     uploadInput.click();
+  };
+
+  const displayImage = () => {
+    var fileInput = document.getElementById('getFile');
+    var file = fileInput.files[0];
+    var reader = new FileReader();
+    reader.onload = (e) => {
+      setUserData({ ...userData, image: e.target.result });
+    };
+    reader.readAsDataURL(file);
   };
 
   return (
@@ -37,7 +51,7 @@ const PersonForm = () => {
           <button type="button" onClick={handleUploadClick}>
             ატვირთვა
           </button>
-          <input type="file" id="getFile" />
+          <input type="file" id="getFile" onChange={displayImage} />
         </label>
       </form>
       <Resume />
