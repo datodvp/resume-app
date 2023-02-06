@@ -10,7 +10,7 @@ const ResetButton = () => {
   const navigate = useNavigate();
   const handleClick = (e) => {
     // formik.resetForm(e);
-    navigate('/');
+    // navigate('/');
   };
   return (
     <button type="button" className="reset-button" onClick={handleClick}>
