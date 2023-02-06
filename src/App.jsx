@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import PersonForm from './pages/PersonForm';
 import ExperienceForm from './pages/ExperienceForm';
 import EducationForm from './pages/EducationForm/EducationForm';
-import { Formik, useFormik } from 'formik';
+import { Formik } from 'formik';
 import { UserContext } from './context/UserContext';
 import validationSchema from './schema/ValidationSchema';
 import initialValues from './schema/InitialValues';

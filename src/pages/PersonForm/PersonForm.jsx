@@ -6,7 +6,6 @@ import Resume from '../../components/Resume/Resume';
 import TextInput from '../../components/TextInput';
 import AboutMeInput from './components/AboutMe/AboutMeInput';
 import { Field, Form } from 'formik';
-import { redirect } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const PersonForm = () => {
@@ -96,7 +95,7 @@ const PersonForm = () => {
         <button
           className="next-button"
           type="button"
-          onClick={(e) => {
+          onClick={() => {
             formik
               .setTouched({
                 name: true,
@@ -105,13 +104,9 @@ const PersonForm = () => {
                 email: true,
                 phone_number: true,
               })
-              .then((e) => {
-                // console.log(e);
-              })
-              .then((e) => {
+              .then(() => {
                 formik.validateForm().then((form) => {
                   if (formik.isValid) {
-                    console.log('dato', redirect);
                     navigate('/ExperienceForm');
                   }
                 });
