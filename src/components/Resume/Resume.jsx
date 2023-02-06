@@ -17,15 +17,15 @@ const Resume = () => {
             {formik.values.name} {formik.values.surname}
           </h1>
           <div className="email-container">
-            <img src={EmailImg} alt="email-icon"></img>
+            {formik.values.email && <img src={EmailImg} alt="email-icon"></img>}
             <p className="email">{formik.values.email}</p>
           </div>
           <div className="phone-container">
-            <img src={PhoneImg} alt="phone-icon"></img>
+            {formik.values.email && <img src={PhoneImg} alt="phone-icon"></img>}
             <p className="phone">{formik.values.phone_number}</p>
           </div>
           <div className="about-me-container">
-            <h2 className="title">ჩემს შესახებ</h2>
+            {formik.values.about_me && <h2 className="title">ჩემს შესახებ</h2>}
             <p className="about-me">{formik.values.about_me}</p>
           </div>
         </div>
@@ -39,7 +39,6 @@ const Resume = () => {
           }
         ></img>
       </div>
-      <hr></hr>
     </div>
   );
 };

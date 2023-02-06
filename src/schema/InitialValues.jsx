@@ -1,8 +1,8 @@
 const initialValues = {
   name: '',
   surname: '',
-  email: 'anzori@redberry.ge',
-  phone_number: '+995551851717',
+  email: '',
+  phone_number: '',
   experiences: [
     {
       position: '',

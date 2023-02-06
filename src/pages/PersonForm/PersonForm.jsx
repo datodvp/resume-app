@@ -24,12 +24,14 @@ const PersonForm = () => {
     reader.onload = (e) => {
       setImagePreview(e.target.result);
     };
-    reader.readAsDataURL(file);
+    if (file) {
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
     <div className="person-form">
-      <form onSubmit={formik.handleSubmit} className="form">
+      <form id="myForm" onSubmit={formik.handleSubmit} className="form">
         <FormHeader title={formTitle} page={formPage} />
         <div className="name-surname">
           <TextInput
@@ -71,7 +73,23 @@ const PersonForm = () => {
           placeholder="ზოგადი ინფო შენს შესახებ"
           name="about_me"
         />
-        <button type="submit">DAACHIRE</button>
+        <TextInput
+          title="ელ.ფოსტა"
+          name="email"
+          placeholder="anzori@redberry.ge"
+          hint="უნდა მთავრდებოდეს @redberry.ge-ით"
+          size="large"
+        />
+        <TextInput
+          title="მობილურის ნომერი"
+          name="phone_number"
+          placeholder="+995 551 12 34 56"
+          hint="უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს"
+          size="large"
+        />
+        <button className="next-button" type="submit">
+          შემდეგი
+        </button>
       </form>
       <Resume />
     </div>
