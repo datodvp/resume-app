@@ -15,10 +15,12 @@ const ImageInput = () => {
     form.setFieldValue('image', file);
 
     const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setImagePreview(reader.result);
-    };
+    if (file) {
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+      };
+    }
   };
 
   return (
