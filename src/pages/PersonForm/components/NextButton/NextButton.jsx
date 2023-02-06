@@ -10,7 +10,6 @@ const NextButton = () => {
       className="next-button"
       type="button"
       onClick={() => {
-        console.log('isvalid: ' + formik.isValid, formik);
         formik.setTouched({
           name: true,
           surname: true,
