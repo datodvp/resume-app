@@ -22,7 +22,6 @@ const App = () => {
       onSubmit={onSubmit}
       validateOnChange={true}
       validateOnBlur={true}
-      validateOnMount
     >
       {(formik) => (
         <UserContext.Provider value={{ formik, imagePreview, setImagePreview }}>

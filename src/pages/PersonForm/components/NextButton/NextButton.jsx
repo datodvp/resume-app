@@ -18,12 +18,12 @@ const NextButton = () => {
             email: true,
             phone_number: true,
           })
-          .then(() => {
-            formik.validateForm().then((form) => {
-              if (formik.isValid) {
-                navigate('/ExperienceForm');
-              }
-            });
+          .then((errors) => {
+            // if there are not errors we can move on next page
+            console.log(typeof errors);
+            if (Object.keys(errors).length === 0) {
+              navigate('/ExperienceForm');
+            }
           });
       }}
     >
