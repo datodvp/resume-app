@@ -9,7 +9,7 @@ const ResetButton = () => {
   const { formik } = useContext(UserContext);
   const navigate = useNavigate();
   const handleClick = (e) => {
-    formik.handleReset(e);
+    // formik.resetForm(e);
     navigate('/');
   };
   return (

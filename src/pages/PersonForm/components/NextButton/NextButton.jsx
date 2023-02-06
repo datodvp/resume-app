@@ -10,21 +10,14 @@ const NextButton = () => {
       className="next-button"
       type="button"
       onClick={() => {
-        formik
-          .setTouched({
-            name: true,
-            surname: true,
-            image: true,
-            email: true,
-            phone_number: true,
-          })
-          .then((errors) => {
-            // if there are not errors we can move on next page
-            console.log(typeof errors);
-            if (Object.keys(errors).length === 0) {
-              navigate('/ExperienceForm');
-            }
-          });
+        console.log('isvalid: ' + formik.isValid, formik);
+        formik.setTouched({
+          name: true,
+          surname: true,
+          image: true,
+          email: true,
+          phone_number: true,
+        });
       }}
     >
       შემდეგი
