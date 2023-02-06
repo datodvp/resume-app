@@ -5,6 +5,7 @@ import FormHeader from '../../components/FormHeader';
 import Resume from '../../components/Resume/Resume';
 import TextInput from '../../components/TextInput';
 import AboutMeInput from './components/AboutMe/AboutMeInput';
+import { Field, Form } from 'formik';
 
 const PersonForm = () => {
   const formTitle = 'პირადი ინფო';
@@ -31,7 +32,7 @@ const PersonForm = () => {
 
   return (
     <div className="person-form">
-      <form id="myForm" onSubmit={formik.handleSubmit} className="form">
+      <Form className="form">
         <FormHeader title={formTitle} page={formPage} />
         <div className="name-surname">
           <TextInput
@@ -49,7 +50,7 @@ const PersonForm = () => {
             size="small"
           />
         </div>
-        <label
+        {/* <label
           className={`photo-upload ${
             formik.touched.image && formik.errors.image ? 'failure' : 'success'
           }`}
@@ -58,7 +59,7 @@ const PersonForm = () => {
           <button type="button" onClick={handleUploadClick}>
             ატვირთვა
           </button>
-          <input
+          <Field
             type="file"
             name="image"
             id="getFile"
@@ -86,11 +87,11 @@ const PersonForm = () => {
           placeholder="+995 551 12 34 56"
           hint="უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს"
           size="large"
-        />
+        /> */}
         <button className="next-button" type="submit">
           შემდეგი
         </button>
-      </form>
+      </Form>
       <Resume />
     </div>
   );
