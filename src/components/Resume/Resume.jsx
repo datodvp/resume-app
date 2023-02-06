@@ -6,7 +6,7 @@ import EmailImg from '../../assets/images/EmailImg.png';
 import PhoneImg from '../../assets/images/PhoneImg.png';
 
 const Resume = () => {
-  // const { formik, imagePreview } = useContext(UserContext);
+  const { formik, imagePreview } = useContext(UserContext);
 
   return (
     <div className="resume">
@@ -14,7 +14,7 @@ const Resume = () => {
       <div className="person">
         <div className="info">
           <h1 className="name-surname">
-            {/* {formik.values.name} {formik.values.surname} */}
+            {formik.values.name} {formik.values.surname}
           </h1>
           <div className="email-container">
             {/* {formik.values.email && <img src={EmailImg} alt="email-icon"></img>} */}

@@ -16,22 +16,24 @@ const App = () => {
   };
 
   return (
-    <UserContext.Provider value={{ imagePreview, setImagePreview }}>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={onSubmit}
-        validateOnChange={true}
-        validateOnBlur={true}
-      >
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="PersonForm" element={<PersonForm />}></Route>
-          <Route path="ExperienceForm" element={<ExperienceForm />}></Route>
-          <Route path="EducationForm" element={<EducationForm />}></Route>
-        </Routes>
-      </Formik>
-    </UserContext.Provider>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+      validateOnChange={true}
+      validateOnBlur={true}
+    >
+      {(formik) => (
+        <UserContext.Provider value={{ formik, imagePreview, setImagePreview }}>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="PersonForm" element={<PersonForm />}></Route>
+            <Route path="ExperienceForm" element={<ExperienceForm />}></Route>
+            <Route path="EducationForm" element={<EducationForm />}></Route>
+          </Routes>
+        </UserContext.Provider>
+      )}
+    </Formik>
   );
 };
 
