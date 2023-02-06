@@ -5,8 +5,9 @@ import FailureImg from '../../assets/images/FailureImg.png';
 import './styles.scss';
 
 const sizeValues = {
-  small: 371,
-  large: 798,
+  // input width in %
+  small: 45,
+  large: 100,
 };
 
 const TextInput = ({ title, name, placeholder, hint, size = 'large' }) => (
@@ -17,7 +18,7 @@ const TextInput = ({ title, name, placeholder, hint, size = 'large' }) => (
       return (
         <label
           className={`text-input-label ${validity}`}
-          style={{ width: sizeValues[size] }}
+          style={{ width: `${sizeValues[size]}%` }}
         >
           {title}
           <div className="input-container">
