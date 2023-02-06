@@ -17,16 +17,18 @@ const Resume = () => {
             {formik.values.name} {formik.values.surname}
           </h1>
           <div className="email-container">
-            {/* {formik.values.email && <img src={EmailImg} alt="email-icon"></img>} */}
-            {/* <p className="email">{formik.values.email}</p> */}
+            {formik.values.email && <img src={EmailImg} alt="email-icon"></img>}
+            <p className="email">{formik.values.email}</p>
           </div>
           <div className="phone-container">
-            {/* {formik.values.email && <img src={PhoneImg} alt="phone-icon"></img>} */}
-            {/* <p className="phone">{formik.values.phone_number}</p> */}
+            {formik.values.phone_number && (
+              <img src={PhoneImg} alt="phone-icon"></img>
+            )}
+            <p className="phone">{formik.values.phone_number}</p>
           </div>
           <div className="about-me-container">
-            {/* {formik.values.about_me && <h2 className="title">ჩემს შესახებ</h2>} */}
-            {/* <p className="about-me">{formik.values.about_me}</p> */}
+            {formik.values.about_me && <h2 className="title">ჩემს შესახებ</h2>}
+            <p className="about-me">{formik.values.about_me}</p>
           </div>
         </div>
 

@@ -16,7 +16,7 @@ const AboutMeInput = ({ title, placeholder, name }) => {
         value={formik.values[name]}
         onChange={formik.handleChange}
         maxLength="200"
-      ></Field>
+      />
     </label>
   );
 };

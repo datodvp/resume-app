@@ -6,11 +6,14 @@ import Resume from '../../components/Resume/Resume';
 import TextInput from '../../components/TextInput';
 import AboutMeInput from './components/AboutMe/AboutMeInput';
 import { Field, Form } from 'formik';
+import { redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const PersonForm = () => {
   const formTitle = 'პირადი ინფო';
   const formPage = '1/3';
 
+  const navigate = useNavigate();
   const { formik, setImagePreview } = useContext(UserContext);
 
   const handleUploadClick = (e) => {
@@ -71,7 +74,7 @@ const PersonForm = () => {
             )}
           </Field>
         </label>
-        {/* <AboutMeInput
+        <AboutMeInput
           title="ჩემს შესახებ (არასავალდებულო)"
           placeholder="ზოგადი ინფო შენს შესახებ"
           name="about_me"
@@ -89,8 +92,32 @@ const PersonForm = () => {
           placeholder="+995 551 12 34 56"
           hint="უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს"
           size="large"
-        /> */}
-        <button className="next-button" type="submit">
+        />
+        <button
+          className="next-button"
+          type="button"
+          onClick={(e) => {
+            formik
+              .setTouched({
+                name: true,
+                surname: true,
+                image: true,
+                email: true,
+                phone_number: true,
+              })
+              .then((e) => {
+                // console.log(e);
+              })
+              .then((e) => {
+                formik.validateForm().then((form) => {
+                  if (formik.isValid) {
+                    console.log('dato', redirect);
+                    navigate('/ExperienceForm');
+                  }
+                });
+              });
+          }}
+        >
           შემდეგი
         </button>
       </Form>
