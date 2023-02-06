@@ -1,35 +1,15 @@
-import { useContext } from 'react';
-import { UserContext } from '../../context/UserContext';
 import './styles.scss';
 import FormHeader from '../../components/FormHeader';
 import Resume from '../../components/Resume/Resume';
 import TextInput from '../../components/TextInput';
+import ImageInput from './components/ImageInput/ImageInput';
 import AboutMeInput from './components/AboutMe/AboutMeInput';
-import { Field, Form } from 'formik';
-import { useNavigate } from 'react-router-dom';
+import { Form } from 'formik';
+import NextButton from './components/NextButton/NextButton';
 
 const PersonForm = () => {
   const formTitle = 'პირადი ინფო';
   const formPage = '1/3';
-
-  const navigate = useNavigate();
-  const { formik, setImagePreview } = useContext(UserContext);
-
-  const handleUploadClick = (e) => {
-    const uploadInput = document.querySelector('#getFile');
-    uploadInput.click();
-  };
-
-  const handleImageChange = (e, form) => {
-    const file = e.target.files[0];
-    form.setFieldValue('image', file);
-
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setImagePreview(reader.result);
-    };
-  };
 
   return (
     <div className="person-form">
@@ -51,28 +31,7 @@ const PersonForm = () => {
             size="small"
           />
         </div>
-        <label
-          className={`photo-upload ${
-            formik.touched.image && formik.errors.image ? 'failure' : 'success'
-          }`}
-        >
-          პირადი ფოტოს ატვირთვა
-          <button type="button" onClick={handleUploadClick}>
-            ატვირთვა
-          </button>
-          <Field name="image">
-            {({ field, form }) => (
-              <>
-                <input
-                  name={field.name}
-                  id="getFile"
-                  type="file"
-                  onChange={(e) => handleImageChange(e, form)}
-                />
-              </>
-            )}
-          </Field>
-        </label>
+        <ImageInput />
         <AboutMeInput
           title="ჩემს შესახებ (არასავალდებულო)"
           placeholder="ზოგადი ინფო შენს შესახებ"
@@ -92,29 +51,7 @@ const PersonForm = () => {
           hint="უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს"
           size="large"
         />
-        <button
-          className="next-button"
-          type="button"
-          onClick={() => {
-            formik
-              .setTouched({
-                name: true,
-                surname: true,
-                image: true,
-                email: true,
-                phone_number: true,
-              })
-              .then(() => {
-                formik.validateForm().then((form) => {
-                  if (formik.isValid) {
-                    navigate('/ExperienceForm');
-                  }
-                });
-              });
-          }}
-        >
-          შემდეგი
-        </button>
+        <NextButton />
       </Form>
       <Resume />
     </div>
