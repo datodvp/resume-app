@@ -18,16 +18,15 @@ const PersonForm = () => {
     uploadInput.click();
   };
 
-  const displayImage = () => {
-    var fileInput = document.getElementById('getFile');
-    var file = fileInput.files[0];
-    var reader = new FileReader();
-    reader.onload = (e) => {
-      setImagePreview(e.target.result);
+  const handleImageChange = (e, form) => {
+    const file = e.target.files[0];
+    form.setFieldValue('image', file);
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImagePreview(reader.result);
     };
-    if (file) {
-      reader.readAsDataURL(file);
-    }
   };
 
   return (
@@ -50,7 +49,7 @@ const PersonForm = () => {
             size="small"
           />
         </div>
-        {/* <label
+        <label
           className={`photo-upload ${
             formik.touched.image && formik.errors.image ? 'failure' : 'success'
           }`}
@@ -59,17 +58,20 @@ const PersonForm = () => {
           <button type="button" onClick={handleUploadClick}>
             ატვირთვა
           </button>
-          <Field
-            type="file"
-            name="image"
-            id="getFile"
-            onChange={(e) => {
-              formik.setFieldValue('image', e.target.files[0]);
-              displayImage(e);
-            }}
-          />
+          <Field name="image">
+            {({ field, form }) => (
+              <>
+                <input
+                  name={field.name}
+                  id="getFile"
+                  type="file"
+                  onChange={(e) => handleImageChange(e, form)}
+                />
+              </>
+            )}
+          </Field>
         </label>
-        <AboutMeInput
+        {/* <AboutMeInput
           title="ჩემს შესახებ (არასავალდებულო)"
           placeholder="ზოგადი ინფო შენს შესახებ"
           name="about_me"

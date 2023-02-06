@@ -32,11 +32,9 @@ const Resume = () => {
 
         <img
           className="person-img"
-          // src={imagePreview}
+          src={imagePreview}
           alt="person"
-          // style={
-          //   formik.values.image ? { display: 'block' } : { display: 'none' }
-          // }
+          style={imagePreview ? { display: 'block' } : { display: 'none' }}
         ></img>
       </div>
     </div>
