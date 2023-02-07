@@ -5,10 +5,18 @@ import { UserContext } from '../../../../context/UserContext';
 const ImageInput = () => {
   const { formik, imagePreview, setImagePreview } = useContext(UserContext);
 
-  // this is just to give user upload popup
   const handleUploadClick = (e) => {
     const uploadInput = document.querySelector('#getFile');
     uploadInput.click();
+  };
+
+  const handleImageChange = (event, form) => {
+    const imageFile = event.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = (event) => {
+      formik.setFieldValue('image', imageFile);
+    };
+    reader.readAsDataURL(imageFile);
   };
 
   return (
@@ -24,7 +32,12 @@ const ImageInput = () => {
       <Field name="image">
         {({ field, form }) => (
           <>
-            <input name={field.name} id="getFile" type="file" onChange={''} />
+            <input
+              name={field.name}
+              id="getFile"
+              type="file"
+              onChange={(e) => handleImageChange(e, form)}
+            />
           </>
         )}
       </Field>

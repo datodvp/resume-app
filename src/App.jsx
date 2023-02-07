@@ -8,12 +8,23 @@ import { Formik } from 'formik';
 import { UserContext } from './context/UserContext';
 import validationSchema from './schema/ValidationSchema';
 import initialValues from './schema/InitialValues';
+import axios from 'axios';
 
 const App = () => {
   const [imagePreview, setImagePreview] = useState();
 
   const onSubmit = (values) => {
-    // console.log(values);
+    let formData = new FormData(document.querySelector('form'));
+    formData.set('image', values.image);
+    formData.append('experiences[0]', {});
+    formData.append('educations[0]', {});
+
+    console.log(values);
+    axios
+      .post('https://resume.redberryinternship.ge/api/cvs', formData)
+      .then((response) => {
+        console.log(response);
+      });
   };
 
   return (

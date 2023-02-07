@@ -7,10 +7,13 @@ import AboutMeInput from './components/AboutMe/AboutMeInput';
 import { Form } from 'formik';
 import NextButton from './components/NextButton/NextButton';
 import { Persist } from 'formik-persist';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 const PersonForm = () => {
   const formTitle = 'პირადი ინფო';
   const formPage = '1/3';
+  const { formik } = useContext(UserContext);
 
   return (
     <div className="person-form">
@@ -53,7 +56,10 @@ const PersonForm = () => {
           size="large"
         />
         <NextButton />
-        <Persist name="userData" />
+        {/* <Persist name="userData" /> */}
+        <button type="submit" onClick={formik.handleSubmit}>
+          SUBMIT
+        </button>
       </Form>
       <Resume />
     </div>
