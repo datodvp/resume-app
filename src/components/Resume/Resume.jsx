@@ -4,10 +4,11 @@ import { UserContext } from '../../context/UserContext';
 import './styles.scss';
 import EmailImg from '../../assets/images/EmailImg.png';
 import PhoneImg from '../../assets/images/PhoneImg.png';
+import { useLocation } from 'react-router-dom';
 
 const Resume = () => {
   const { formik, imagePreview } = useContext(UserContext);
-
+  const { pathname } = useLocation();
   return (
     <div className="resume">
       <img className="logo" src={ResumeLogoImg} alt="resume logo"></img>
@@ -39,6 +40,7 @@ const Resume = () => {
           style={imagePreview ? { display: 'block' } : { display: 'none' }}
         ></img>
       </div>
+      {pathname === '/ExperienceForm' ? <hr></hr> : null}
     </div>
   );
 };
