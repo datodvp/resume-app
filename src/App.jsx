@@ -36,7 +36,9 @@ const App = () => {
       enableReinitialize // makes possible to change initial values
     >
       {(formik) => (
-        <UserContext.Provider value={{ formik, imagePreview, setImagePreview }}>
+        <UserContext.Provider
+          value={{ formik, imagePreview, setImagePreview, setFormValues }}
+        >
           {/* {console.log(formik)} */}
           <Routes>
             <Route path="/" element={<Home />}></Route>
