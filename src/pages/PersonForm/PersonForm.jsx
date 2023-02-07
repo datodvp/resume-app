@@ -12,8 +12,6 @@ const PersonForm = () => {
   const formTitle = 'პირადი ინფო';
   const formPage = '1/3';
 
-  // console.log(JSON.parse(localStorage.getItem('userData')));
-
   return (
     <div className="person-form">
       <Form className="form">
