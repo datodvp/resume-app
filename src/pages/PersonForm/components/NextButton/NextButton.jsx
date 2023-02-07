@@ -10,13 +10,19 @@ const NextButton = () => {
       className="next-button"
       type="button"
       onClick={() => {
-        formik.setTouched({
-          name: true,
-          surname: true,
-          image: true,
-          email: true,
-          phone_number: true,
-        });
+        formik
+          .setTouched({
+            name: true,
+            surname: true,
+            image: true,
+            email: true,
+            phone_number: true,
+          })
+          .then((errorsObject) => {
+            if (Object.keys(errorsObject).length === 0) {
+              navigate('/ExperienceForm');
+            }
+          });
       }}
     >
       შემდეგი
