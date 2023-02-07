@@ -11,20 +11,33 @@ import initialValues from './schema/InitialValues';
 
 const App = () => {
   const [imagePreview, setImagePreview] = useState();
+  const [formValues, setFormValues] = useState(null);
+
+  useState(() => {
+    // Take form data from localstorage if it exists
+    const savedValues = JSON.parse(localStorage.getItem('userData'));
+    if (savedValues) {
+      setFormValues(savedValues.values);
+      console.log(savedValues);
+    }
+  }, []);
+
   const onSubmit = (values) => {
-    console.log(values);
+    // console.log(values);
   };
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={formValues || initialValues}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
       validateOnChange={true}
-      validateOnBlur={true}
+      validateOnMount
+      enableReinitialize // makes possible to change initial values
     >
       {(formik) => (
         <UserContext.Provider value={{ formik, imagePreview, setImagePreview }}>
+          {/* {console.log(formik)} */}
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="PersonForm" element={<PersonForm />}></Route>

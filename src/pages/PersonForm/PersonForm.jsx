@@ -6,10 +6,13 @@ import ImageInput from './components/ImageInput/ImageInput';
 import AboutMeInput from './components/AboutMe/AboutMeInput';
 import { Form } from 'formik';
 import NextButton from './components/NextButton/NextButton';
+import { Persist } from 'formik-persist';
 
 const PersonForm = () => {
   const formTitle = 'პირადი ინფო';
   const formPage = '1/3';
+
+  // console.log(JSON.parse(localStorage.getItem('userData')));
 
   return (
     <div className="person-form">
@@ -52,6 +55,7 @@ const PersonForm = () => {
           size="large"
         />
         <NextButton />
+        <Persist name="userData" />
       </Form>
       <Resume />
     </div>
