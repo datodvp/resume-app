@@ -37,7 +37,6 @@ const App = () => {
     >
       {(formik) => (
         <UserContext.Provider value={{ formik, imagePreview, setImagePreview }}>
-          {/* {console.log(formik)} */}
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="PersonForm" element={<PersonForm />}></Route>

@@ -19,7 +19,13 @@ const NextButton = () => {
             phone_number: true,
           })
           .then((errorsObject) => {
-            if (Object.keys(errorsObject).length === 0) {
+            if (
+              !errorsObject.name &&
+              !errorsObject.surname &&
+              !errorsObject.image &&
+              !errorsObject.email &&
+              !errorsObject.phone_number
+            ) {
               navigate('/ExperienceForm');
             }
           });

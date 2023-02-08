@@ -5,22 +5,22 @@ import { UserContext } from '../../../../context/UserContext';
 const NextButton = () => {
   const navigate = useNavigate();
   const { formik } = useContext(UserContext);
+  console.log(formik.values);
   return (
     <button
       className="next-button"
       type="button"
       onClick={() => {
-        console.log(formik.values);
         const FormikExperiencesTouchedArray = formik.values.experiences.map(
           (experience) => {
             return {
               position: true,
               employer: true,
               start_date: true,
+              due_date: true,
             };
           }
         );
-        console.log(FormikExperiencesTouchedArray);
         formik
           .setTouched({
             experiences: FormikExperiencesTouchedArray,

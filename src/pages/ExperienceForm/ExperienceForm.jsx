@@ -18,7 +18,7 @@ const ExperienceForm = () => {
     <div className="experience-form">
       <Form className="form">
         <FormHeader title={formTitle} page={formPage} />
-        {/* {console.log(formik.values.experiences)} */}
+
         {formik.values.experiences.map &&
           formik.values.experiences.map((value, index) => {
             const name = `experiences[${index}]`;
@@ -36,10 +36,16 @@ const ExperienceForm = () => {
                   placeholder="დამსაქმებელი"
                   hint="მინიმუმ 2 სიმბოლო"
                 />
-                <DateInput
-                  title="დაწყების რიცხვი"
-                  name={`${name}.start_date`}
-                />
+                <div className="start-end-date-container">
+                  <DateInput
+                    title="დაწყების რიცხვი"
+                    name={`${name}.start_date`}
+                  />
+                  <DateInput
+                    title="დამთავრების რიცხვი"
+                    name={`${name}.due_date`}
+                  />
+                </div>
               </div>
             );
           })}

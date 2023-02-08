@@ -1,4 +1,10 @@
-.text-input-label {
+.date-input-label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  line-height: 21px;
+  margin-bottom: 31px;
+  width: 100%;
   &.success {
     color: black;
   }
@@ -7,16 +13,40 @@
   }
 
   .input-container {
-    &.failure {
-      border: 1px solid #ef5050;
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    input {
+      &:focus {
+        outline: 1px solid #bcbcbc;
+      }
+      &.failure {
+        border: 1px solid #ef5050;
+      }
+      &.success {
+        border: 1px solid #98e37e;
+      }
+
+      height: 48px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 13px 16px;
+      border: 1px solid #bcbcbc;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      width: 100%;
     }
-    &.success {
-      border: 1px solid #98e37e;
-    }
+
     img {
+      display: none;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+
       &.success {
         display: none;
-        right: 10px;
       }
 
       &.failure {

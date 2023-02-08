@@ -8,9 +8,8 @@ const DateInput = ({ title, name }) => (
     {({ field, form, meta }) => {
       const validity =
         meta.touched && !meta.error ? 'success' : meta.touched ? 'failure' : '';
-      console.log(field);
       return (
-        <label className={`text-input-label ${validity}`}>
+        <label className={`date-input-label ${validity}`}>
           {title}
           <div className="input-container">
             <input

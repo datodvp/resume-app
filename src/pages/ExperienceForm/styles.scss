@@ -29,5 +29,11 @@
       letter-spacing: 0.08em;
       cursor: pointer;
     }
+
+    .start-end-date-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10%;
+    }
   }
 }
