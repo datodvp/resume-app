@@ -41,6 +41,39 @@ const Resume = () => {
         ></img>
       </div>
       {pathname === '/ExperienceForm' ? <hr></hr> : null}
+      <div className="experience">
+        {formik.values.experiences.every(
+          (experience) =>
+            !experience.position &&
+            !experience.employer &&
+            !experience.start_date &&
+            !experience.due_date &&
+            !experience.description
+        ) ? null : (
+          <h2 className="title">გამოცდილება</h2>
+        )}
+        {formik.values.experiences.map((value) => {
+          console.log(value);
+          return (
+            <>
+              {
+                <div className="position-employer">
+                  {value.position && `${value.position}, `}
+                  {value.employer && value.employer}
+                </div>
+              }
+              <div className="dates">
+                {value.start_date && `${value.start_date} - `}
+                {value.due_date && value.due_date}
+              </div>
+              <div className="description">
+                {value.description && value.description}
+              </div>
+            </>
+          );
+        })}
+      </div>
+      {pathname === '/EducationForm' ? <hr></hr> : null}
     </div>
   );
 };
