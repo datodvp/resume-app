@@ -16,6 +16,7 @@ const NextButton = () => {
             return {
               position: true,
               employer: true,
+              start_date: true,
             };
           }
         );

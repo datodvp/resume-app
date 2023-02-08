@@ -1,0 +1,28 @@
+.text-input-label {
+  &.success {
+    color: black;
+  }
+  &.failure {
+    color: #e52f2f;
+  }
+
+  .input-container {
+    &.failure {
+      border: 1px solid #ef5050;
+    }
+    &.success {
+      border: 1px solid #98e37e;
+    }
+    img {
+      &.success {
+        display: none;
+        right: 10px;
+      }
+
+      &.failure {
+        display: block;
+        right: -36px;
+      }
+    }
+  }
+}

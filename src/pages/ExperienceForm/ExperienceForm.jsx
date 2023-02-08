@@ -7,6 +7,7 @@ import './styles.scss';
 import { UserContext } from '../../context/UserContext';
 import experience from '../../schema/initialValues/experienceValues';
 import NextButton from './components/NextButton';
+import DateInput from '../../components/DateInput';
 
 const ExperienceForm = () => {
   const formTitle = 'გამოცდილება';
@@ -34,6 +35,10 @@ const ExperienceForm = () => {
                   name={`${name}.employer`}
                   placeholder="დამსაქმებელი"
                   hint="მინიმუმ 2 სიმბოლო"
+                />
+                <DateInput
+                  title="დაწყების რიცხვი"
+                  name={`${name}.start_date`}
                 />
               </div>
             );
