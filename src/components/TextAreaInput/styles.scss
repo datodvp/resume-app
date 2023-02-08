@@ -1,14 +1,20 @@
-.TextArea-label {
+.textarea-label {
   display: flex;
   flex-direction: column;
   margin-bottom: 33px;
 
-  margin-top: 55px;
   font-size: 16px;
   font-weight: bold;
   line-height: 21px;
   letter-spacing: 0em;
   text-align: left;
+
+  &.success {
+    color: black;
+  }
+  &.failure {
+    color: #e52f2f;
+  }
 
   textarea {
     margin-top: 8px;
@@ -24,6 +30,14 @@
     border-radius: 4px;
     &:focus {
       outline: 1px solid #bcbcbc;
+    }
+
+    &.success {
+      border: 1px solid #98e37e;
+    }
+
+    &.failure {
+      border: 1px solid #ef5050;
     }
   }
 }

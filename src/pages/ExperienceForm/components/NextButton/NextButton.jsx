@@ -5,7 +5,6 @@ import { UserContext } from '../../../../context/UserContext';
 const NextButton = () => {
   const navigate = useNavigate();
   const { formik } = useContext(UserContext);
-  console.log(formik.values);
   return (
     <button
       className="next-button"
@@ -18,6 +17,7 @@ const NextButton = () => {
               employer: true,
               start_date: true,
               due_date: true,
+              description: true,
             };
           }
         );
@@ -26,6 +26,7 @@ const NextButton = () => {
             experiences: FormikExperiencesTouchedArray,
           })
           .then((errorsObject) => {
+            console.log(errorsObject);
             if (Object.keys(errorsObject).length === 0) {
               // navigate('/EducationForm');
             }

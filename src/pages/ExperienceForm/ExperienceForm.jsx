@@ -8,6 +8,7 @@ import { UserContext } from '../../context/UserContext';
 import experience from '../../schema/initialValues/experienceValues';
 import NextButton from './components/NextButton';
 import DateInput from '../../components/DateInput';
+import TextAreaInput from '../../components/TextAreaInput/TextAreaInput';
 
 const ExperienceForm = () => {
   const formTitle = 'გამოცდილება';
@@ -46,11 +47,18 @@ const ExperienceForm = () => {
                     name={`${name}.due_date`}
                   />
                 </div>
+                <TextAreaInput
+                  title="აღწერა"
+                  placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
+                  name={`${name}.description`}
+                />
+                <hr></hr>
               </div>
             );
           })}
         <button
           type="button"
+          className="multiply-button"
           onClick={() => {
             formik.setFieldValue('experiences', [
               ...formik.values.experiences,
@@ -58,7 +66,7 @@ const ExperienceForm = () => {
             ]);
           }}
         >
-          DAAMATE
+          მეტი გამოცდილების დამატება
         </button>
         <NextButton />
       </Form>

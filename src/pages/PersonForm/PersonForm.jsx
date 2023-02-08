@@ -3,7 +3,7 @@ import FormHeader from '../../components/FormHeader';
 import Resume from '../../components/Resume/Resume';
 import TextInput from '../../components/TextInput';
 import ImageInput from './components/ImageInput/ImageInput';
-import AboutMeInput from './components/AboutMe/AboutMeInput';
+import TextAreaInput from '../../components/TextAreaInput/TextAreaInput';
 import { Form } from 'formik';
 import NextButton from './components/NextButton/NextButton';
 import { Persist } from 'formik-persist';
@@ -36,7 +36,7 @@ const PersonForm = () => {
           />
         </div>
         <ImageInput />
-        <AboutMeInput
+        <TextAreaInput
           title="ჩემს შესახებ (არასავალდებულო)"
           placeholder="ზოგადი ინფო შენს შესახებ"
           name="about_me"
