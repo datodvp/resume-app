@@ -40,7 +40,7 @@ const Resume = () => {
           style={imagePreview ? { display: 'block' } : { display: 'none' }}
         ></img>
       </div>
-      {pathname === '/ExperienceForm' ? <hr></hr> : null}
+      {pathname === '/ExperienceForm' || '/EducationForm' ? <hr></hr> : null}
       <div className="experience">
         {formik.values.experiences.every(
           (experience) =>
@@ -52,10 +52,9 @@ const Resume = () => {
         ) ? null : (
           <h2 className="title">გამოცდილება</h2>
         )}
-        {formik.values.experiences.map((value) => {
-          console.log(value);
+        {formik.values.experiences.map((value, index) => {
           return (
-            <>
+            <div key={index}>
               {
                 <div className="position-employer">
                   {value.position && `${value.position}, `}
@@ -69,7 +68,7 @@ const Resume = () => {
               <div className="description">
                 {value.description && value.description}
               </div>
-            </>
+            </div>
           );
         })}
       </div>
