@@ -1,15 +1,18 @@
 .experience-form {
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  height: 100%;
   display: flex;
 
   .form {
     width: 57%;
     background-color: #f9f9f9;
     padding: 47px 150px 65px 150px;
-  }
 
-  .resume {
-    width: 43%;
+    .text-input-label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      line-height: 21px;
+    }
   }
 }

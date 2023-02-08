@@ -7,7 +7,7 @@ import EducationForm from './pages/EducationForm/EducationForm';
 import { Formik } from 'formik';
 import { UserContext } from './context/UserContext';
 import validationSchema from './schema/ValidationSchema';
-import initialValues from './schema/InitialValues';
+import initialValues from './schema/initialValues/initialValues';
 import axios from 'axios';
 
 const App = () => {
@@ -19,7 +19,6 @@ const App = () => {
     formData.append('experiences[0]', {});
     formData.append('educations[0]', {});
 
-    console.log(values);
     axios
       .post('https://resume.redberryinternship.ge/api/cvs', formData)
       .then((response) => {
