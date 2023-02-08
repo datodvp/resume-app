@@ -6,6 +6,7 @@ import { Form } from 'formik';
 import './styles.scss';
 import { UserContext } from '../../context/UserContext';
 import experience from '../../schema/initialValues/experienceValues';
+import NextButton from './components/NextButton';
 
 const ExperienceForm = () => {
   const formTitle = 'გამოცდილება';
@@ -16,20 +17,21 @@ const ExperienceForm = () => {
     <div className="experience-form">
       <Form className="form">
         <FormHeader title={formTitle} page={formPage} />
-        {console.log(formik.values.experiences)}
+        {/* {console.log(formik.values.experiences)} */}
         {formik.values.experiences.map &&
           formik.values.experiences.map((value, index) => {
+            const name = `experiences[${index}]`;
             return (
               <div key={index}>
                 <TextInput
                   title="თანამდებობა"
-                  name="experiences[0].position"
+                  name={`${name}.position`}
                   placeholder="თანამდებობა"
                   hint="მინიმუმ 2 სიმბოლო"
                 />
                 <TextInput
                   title="დამსაქმებელი"
-                  name="experiences[0].employer"
+                  name={`${name}.employer`}
                   placeholder="დამსაქმებელი"
                   hint="მინიმუმ 2 სიმბოლო"
                 />
@@ -47,6 +49,7 @@ const ExperienceForm = () => {
         >
           DAAMATE
         </button>
+        <NextButton />
       </Form>
       <Resume />
     </div>
