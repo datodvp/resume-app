@@ -57,9 +57,6 @@ const PersonForm = () => {
         />
         <NextButton />
         {/* <Persist name="userData" /> */}
-        <button type="submit" onClick={formik.handleSubmit}>
-          SUBMIT
-        </button>
       </Form>
       <Resume />
     </div>
