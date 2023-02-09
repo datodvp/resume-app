@@ -1,37 +1,45 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Dropdown from 'react-dropdown';
+import DownArrowImg from '../../../../assets/images/DownArrowImg.svg';
 import './styles.scss';
 
-const options = ['one', 'two', 'three'];
+const options = ['1', '2'];
 
-class FlatArrayExample extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: '',
-    };
-    this._onSelect = this._onSelect.bind(this);
-  }
+const CustomSelect = ({ options }) => {
+  const [selected, setSelected] = useState('');
+  const [formattedOptions, setFormattedOptions] = useState([]);
 
-  _onSelect(option) {
-    console.log('You selected ', option.label);
-    this.setState({ selected: option });
-  }
+  const _onSelect = (option) => {
+    setSelected(option);
+    console.log(option);
+  };
+  useEffect(() => {
+    formatOptions();
+  }, []);
 
-  render() {
-    const defaultOption = this.state.selected;
-    return (
-      <section>
-        <h3>Flat Array Example </h3>
+  const formatOptions = () => {
+    //format options for Dropdown component
+    const newOptions = options.map((item) => ({
+      value: item.id,
+      label: item.title,
+    }));
+    setFormattedOptions(newOptions);
+  };
+
+  return (
+    <section>
+      <h3>Flat Array Example </h3>
+      <div className="Dropdown-container">
         <Dropdown
-          options={options}
-          onChange={this._onSelect}
-          value={defaultOption}
+          options={formattedOptions}
+          onChange={_onSelect}
+          value={selected}
           placeholder="Select an option"
         />
-      </section>
-    );
-  }
-}
+        <img src={DownArrowImg} alt="" />
+      </div>
+    </section>
+  );
+};
 
-export default FlatArrayExample;
+export default CustomSelect;
