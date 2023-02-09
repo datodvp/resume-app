@@ -37,7 +37,6 @@
     }
 
     hr {
-      margin-top: 46px;
       margin-bottom: 37px;
     }
 
@@ -54,6 +53,10 @@
       font-weight: 500;
       line-height: 20px;
       cursor: pointer;
+    }
+
+    .textarea-label {
+      margin-bottom: 58px;
     }
   }
 }
