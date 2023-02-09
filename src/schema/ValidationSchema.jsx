@@ -13,7 +13,7 @@ const validationSchema = Yup.object({
     .matches(/^([A-Za-z0-9])+@redberry.ge$/)
     .required(),
   phone_number: Yup.string()
-    .matches(/^(\+995\s?)?\d{3}\s?\d{2}\s?\d{2}\s?\d{2}$/)
+    .matches(/^(\+995\s?)(5\d{2})\s?\d{2}\s?\d{2}\s?\d{2}$/)
     .required(),
   experiences: Yup.array(
     Yup.object({
