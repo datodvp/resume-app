@@ -7,8 +7,8 @@ const initialValues = {
     {
       position: 'back-end developer',
       employer: 'Redberry',
-      start_date: '',
-      due_date: '',
+      start_date: '2000-11-11',
+      due_date: '2000-11-11',
       description: 'Lorem ipsum dolor sit amet, consectetur bibendum.',
     },
   ],
@@ -21,7 +21,7 @@ const initialValues = {
         'სამართლის ფაკულტეტის მიზანი იყო მიგვეღო ფართო თეორიული ცოდნა სამართლის არსის, სისტემის, ძირითადი პრინციპების, სამართლებრივი სისტემების, ქართული სამართლის ისტორიული წყაროების, კერძო, სისხლის და საჯარო სამართლის სფეროების ძირითადი თეორიების, პრინციპებისა და რეგულირების თავისებურებების შესახებ.',
     },
   ],
-  image: 'image-name.png',
+  image: 'image',
   about_me: 'ეს არის აღწერა ჩემს შესახებ',
 };
 

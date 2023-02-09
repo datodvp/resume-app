@@ -7,13 +7,11 @@ import TextAreaInput from '../../components/TextAreaInput/TextAreaInput';
 import { Form } from 'formik';
 import NextButton from './components/NextButton/NextButton';
 import { Persist } from 'formik-persist';
-import { useContext } from 'react';
-import { UserContext } from '../../context/UserContext';
+import PhoneInput from './components/PhoneInput';
 
 const PersonForm = () => {
   const formTitle = 'პირადი ინფო';
   const formPage = '1/3';
-  const { formik } = useContext(UserContext);
 
   return (
     <div className="person-form">
@@ -48,12 +46,11 @@ const PersonForm = () => {
           hint="უნდა მთავრდებოდეს @redberry.ge-ით"
           size="large"
         />
-        <TextInput
+        <PhoneInput
           title="მობილურის ნომერი"
           name="phone_number"
           placeholder="+995 551 12 34 56"
           hint="უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს"
-          size="large"
         />
         <NextButton />
         {/* <Persist name="userData" /> */}
