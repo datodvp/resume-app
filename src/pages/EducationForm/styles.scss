@@ -1,11 +1,16 @@
 .education-form {
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  height: 100%;
   display: flex;
 
   .form {
     width: 57%;
     background-color: #f9f9f9;
     padding: 47px 150px 65px 150px;
+
+    .degree-due-date {
+      display: flex;
+      gap: 56px;
+    }
   }
 }
