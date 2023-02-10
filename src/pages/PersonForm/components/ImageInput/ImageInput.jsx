@@ -10,11 +10,15 @@ const ImageInput = () => {
     uploadInput.click();
   };
 
-  const handleImageChange = (event, form) => {
+  const handleImageChange = (event) => {
     const imageFile = event.target.files[0];
     const reader = new FileReader();
     reader.onloadend = (event) => {
       formik.setFieldValue('image', imageFile);
+      // const oldPersistStorage = JSON.parse(localStorage.getItem('resume-form'));
+      // oldPersistStorage.values.image = imageFile;
+      // console.log(JSON.stringify(oldPersistStorage.values.image));
+      setImagePreview(reader.result);
     };
     reader.readAsDataURL(imageFile);
   };
@@ -36,7 +40,7 @@ const ImageInput = () => {
               name={field.name}
               id="getFile"
               type="file"
-              onChange={(e) => handleImageChange(e, form)}
+              onChange={handleImageChange}
             />
           </>
         )}

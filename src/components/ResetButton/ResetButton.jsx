@@ -5,12 +5,13 @@ import { UserContext } from '../../context/UserContext';
 import './styles.scss';
 
 const ResetButton = () => {
-  const { formik } = useContext(UserContext);
+  const { formik, setImagePreview } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleClick = (e) => {
     localStorage.clear();
     formik.resetForm(e);
+    setImagePreview('');
     navigate('/');
   };
   return (

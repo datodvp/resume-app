@@ -10,47 +10,51 @@ import NextButton from './components/NextButton';
 import DateInput from '../../components/DateInput';
 import TextAreaInput from '../../components/TextAreaInput/TextAreaInput';
 
-const ExperienceForm = () => {
+const ExperienceForm = ({ hidden }) => {
   const formTitle = 'გამოცდილება';
   const formPage = '2/3';
 
   const { formik } = useContext(UserContext);
   return (
-    <div className="experience-form">
-      <Form className="form">
+    <div
+      className="experience-form"
+      style={hidden && { display: 'none', position: 'absolute' }}
+    >
+      <div className="form">
         <FormHeader title={formTitle} page={formPage} />
 
         {formik.values.experiences.map &&
           formik.values.experiences.map((value, index) => {
             const name = `experiences[${index}]`;
+
             return (
               <div key={index}>
                 <TextInput
                   title="თანამდებობა"
-                  name={`${name}.position`}
+                  name={`${name}[position]`}
                   placeholder="თანამდებობა"
                   hint="მინიმუმ 2 სიმბოლო"
                 />
                 <TextInput
                   title="დამსაქმებელი"
-                  name={`${name}.employer`}
+                  name={`${name}[employer]`}
                   placeholder="დამსაქმებელი"
                   hint="მინიმუმ 2 სიმბოლო"
                 />
                 <div className="start-end-date-container">
                   <DateInput
                     title="დაწყების რიცხვი"
-                    name={`${name}.start_date`}
+                    name={`${name}[start_date]`}
                   />
                   <DateInput
                     title="დამთავრების რიცხვი"
-                    name={`${name}.due_date`}
+                    name={`${name}[due_date]`}
                   />
                 </div>
                 <TextAreaInput
                   title="აღწერა"
                   placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
-                  name={`${name}.description`}
+                  name={`${name}[description]`}
                 />
                 <hr></hr>
               </div>
@@ -69,7 +73,7 @@ const ExperienceForm = () => {
           მეტი გამოცდილების დამატება
         </button>
         <NextButton />
-      </Form>
+      </div>
       <Resume />
     </div>
   );

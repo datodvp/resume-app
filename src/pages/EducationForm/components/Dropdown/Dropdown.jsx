@@ -7,7 +7,6 @@ const Dropdown = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchDegrees();
-      // console.log(data);
       setDegrees(data);
     };
 

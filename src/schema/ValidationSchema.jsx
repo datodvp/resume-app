@@ -28,6 +28,16 @@ const validationSchema = Yup.object({
       description: Yup.string().required(),
     })
   ),
+  educations: Yup.array(
+    Yup.object({
+      institute: Yup.string()
+        .matches(/^.{2,}/)
+        .required(),
+      degree_id: Yup.string().required(),
+      due_date: Yup.date().required(),
+      description: Yup.string().required(),
+    })
+  ),
 });
 
 export default validationSchema;

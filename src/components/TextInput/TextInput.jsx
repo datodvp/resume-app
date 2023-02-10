@@ -24,9 +24,7 @@ const TextInput = ({ title, name, placeholder, hint, size = 'large' }) => (
           <div className="input-container">
             <input
               className={validity}
-              name={name}
-              value={field.value}
-              id={name}
+              {...field}
               onChange={(e) => {
                 // touch input in formik touch object with onBlur method
                 field.onBlur(e);

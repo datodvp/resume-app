@@ -9,13 +9,16 @@ import NextButton from './components/NextButton/NextButton';
 import { Persist } from 'formik-persist';
 import PhoneInput from './components/PhoneInput';
 
-const PersonForm = () => {
+const PersonForm = ({ hidden }) => {
   const formTitle = 'პირადი ინფო';
   const formPage = '1/3';
 
   return (
-    <div className="person-form">
-      <Form className="form">
+    <div
+      className="person-form"
+      style={hidden && { display: 'none', position: 'absolute' }}
+    >
+      <div className="form">
         <FormHeader title={formTitle} page={formPage} />
         <div className="name-surname">
           <TextInput
@@ -53,8 +56,7 @@ const PersonForm = () => {
           hint="უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს"
         />
         <NextButton />
-        {/* <Persist name="userData" /> */}
-      </Form>
+      </div>
       <Resume />
     </div>
   );
