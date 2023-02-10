@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import FormHeader from '../../components/FormHeader';
 import Resume from '../../components/Resume/Resume';
-import CustomSelect from './components/CustomSelect/CustomSelect';
 import { fetchDegrees } from '../../services/degrees';
 import './styles.scss';
 
@@ -24,7 +23,6 @@ const EducationForm = () => {
     <div className="experience-form">
       <div className="form">
         <FormHeader title={formTitle} page={formPage} />
-        {degrees && <CustomSelect options={degrees} />}
       </div>
       <Resume />
     </div>
