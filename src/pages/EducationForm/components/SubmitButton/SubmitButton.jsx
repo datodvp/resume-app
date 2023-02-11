@@ -17,7 +17,6 @@ const SubmitButton = () => {
         };
       }
     );
-    console.log(FormikEducationsTouchedArray);
     formik.setTouched({
       experiences: FormikEducationsTouchedArray,
     });
