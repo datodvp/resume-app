@@ -5,6 +5,16 @@ import { UserContext } from '../../../../context/UserContext';
 const NextButton = () => {
   const navigate = useNavigate();
   const { formik } = useContext(UserContext);
+
+  const removeEmptyArray = () => {
+    if (formik.values.experiences.length > 1) {
+      const filteredExperiences = formik.values.experiences.filter((exp) =>
+        Object.values(exp).every((val) => !!val)
+      );
+      formik.setFieldValue('experiences', filteredExperiences);
+    }
+  };
+
   return (
     <button
       className="next-button"
@@ -27,6 +37,7 @@ const NextButton = () => {
           })
           .then((errorsObject) => {
             if (!errorsObject.experiences) {
+              removeEmptyArray();
               navigate('/EducationForm');
             }
           });
