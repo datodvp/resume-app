@@ -155,17 +155,3 @@ const validationSchema = Yup.object({
 });
 
 export default validationSchema;
-
-///// EXPERIENCES
-
-// Yup.object({
-//   position: Yup.string()
-//     .matches(/^.{2,}/)
-//     .required(),
-//   employer: Yup.string()
-//     .matches(/^.{2,}/)
-//     .required(),
-//   start_date: Yup.date().required(),
-//   due_date: Yup.date().required(),
-//   description: Yup.string().required(),
-// })
