@@ -135,6 +135,7 @@ const validationSchema = Yup.object({
           ['degree_id', 'due_date'],
           ['degree_id', 'description'],
           ['due_date', 'description'],
+          ['description', 'description'],
         ]
       )
     )

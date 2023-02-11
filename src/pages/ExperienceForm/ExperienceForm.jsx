@@ -23,7 +23,7 @@ const ExperienceForm = ({ hidden }) => {
       <div className="form">
         <FormHeader title={formTitle} page={formPage} />
 
-        {formik.values.experiences.map &&
+        {formik.values.experiences &&
           formik.values.experiences.map((value, index) => {
             const name = `experiences[${index}]`;
 

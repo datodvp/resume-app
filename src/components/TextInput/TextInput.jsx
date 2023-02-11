@@ -13,6 +13,7 @@ const sizeValues = {
 const TextInput = ({ title, name, placeholder, hint, size = 'large' }) => (
   <Field name={name}>
     {({ field, form, meta }) => {
+      console.log(field.name);
       const validity =
         meta.touched && !meta.error ? 'success' : meta.touched ? 'failure' : '';
       return (
