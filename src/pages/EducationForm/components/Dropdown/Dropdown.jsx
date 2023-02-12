@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { fetchDegrees } from '../../services/degrees';
+import { getDegrees } from '../../api/degrees';
 
 const [degrees, setDegrees] = useState();
 
 const Dropdown = () => {
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchDegrees();
+      const data = await getDegrees();
       setDegrees(data);
     };
 

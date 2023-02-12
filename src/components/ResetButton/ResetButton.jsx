@@ -11,9 +11,8 @@ const ResetButton = () => {
 
   const handleClick = (e) => {
     // reset state, localstorage, formik and navigate to "/"
-    setInputsData(initialValues);
-    localStorage.clear();
     formik.resetForm(e);
+    setInputsData(initialValues);
     navigate('/');
   };
   return (

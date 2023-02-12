@@ -1,8 +1,6 @@
-import axios from 'axios';
-
-export const fetchDegrees = async () => {
+export const getDegrees = async () => {
   try {
-    const { data } = await axios.get(
+    const { data } = await fetch(
       'https://resume.redberryinternship.ge/api/degrees'
     );
     return data;

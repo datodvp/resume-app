@@ -8,53 +8,17 @@ import { Form, Formik } from 'formik';
 import { UserContext } from './context/UserContext';
 import validationSchema from './schema/ValidationSchema';
 import initialValues from './schema/initialValues/initialValues';
+import { postData } from './api/postData';
 import { Persist } from 'formik-persist';
 
 const App = () => {
   const [inputsData, setInputsData] = useState(initialValues);
 
-  const onSubmit = async (values) => {
-    const formData = await setFormDataValues(values);
-
-    fetch('https://resume.redberryinternship.ge/api/cvs', {
-      method: 'POST', // or 'PUT'
-      headers: {
-        Accept: 'application/json',
-      },
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  };
-
-  const setFormDataValues = async (values) => {
-    const formData = new FormData(document.querySelector('form'));
-
-    const phoneNumberFormatted = values.phone_number.replace(/\s/, '');
-    const imageBlobValue = await base64ToBlob(values.image);
-
-    formData.set('phone_number', phoneNumberFormatted);
-    formData.set('image', imageBlobValue);
-
-    return formData;
-  };
-
-  const base64ToBlob = async (value) => {
-    return await fetch(value)
-      .then((res) => res.blob())
-      .then((blob) => blob);
-  };
-
   return (
     <Formik
       initialValues={inputsData}
       validationSchema={validationSchema}
-      onSubmit={onSubmit}
+      onSubmit={postData}
       validateOnChange={true}
       validateOnMount
       enableReinitialize // makes possible to change initial values

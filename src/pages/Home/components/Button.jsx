@@ -1,11 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Button = () => {
+  const navigate = useNavigate();
   return (
-    <Link to={`PersonForm`} className="button">
+    <button
+      type="button"
+      className="button"
+      onClick={() => {
+        localStorage.clear();
+        navigate('/PersonForm');
+      }}
+    >
       რეზიუმეს დამატება
-    </Link>
+    </button>
   );
 };
 
