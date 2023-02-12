@@ -13,6 +13,7 @@ import { UserContext } from '../../context/UserContext';
 import { Persist } from 'formik-persist';
 
 import './styles.scss';
+import BackButton from '../../components/BackButton';
 
 const EducationForm = () => {
   const formTitle = 'განათლება';
@@ -69,8 +70,10 @@ const EducationForm = () => {
         >
           მეტი სასწავლებლის დამატება
         </button>
-
-        <SubmitButton />
+        <div className="buttons-container">
+          <BackButton path={'/ExperienceForm'} />
+          <SubmitButton />
+        </div>
       </div>
 
       <Resume />

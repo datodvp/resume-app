@@ -7,6 +7,7 @@ import './styles.scss';
 import { UserContext } from '../../context/UserContext';
 import experience from '../../schema/initialValues/experienceValues';
 import NextButton from './components/NextButton';
+import BackButton from '../../components/BackButton';
 import DateInput from '../../components/DateInput';
 import TextAreaInput from '../../components/TextAreaInput/TextAreaInput';
 
@@ -72,7 +73,10 @@ const ExperienceForm = ({ hidden }) => {
         >
           მეტი გამოცდილების დამატება
         </button>
-        <NextButton />
+        <div className="buttons-container">
+          <BackButton path={'/PersonForm'} />
+          <NextButton />
+        </div>
       </div>
       <Resume />
     </div>

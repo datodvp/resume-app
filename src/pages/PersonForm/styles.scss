@@ -20,8 +20,9 @@
       font-size: 18px;
       font-weight: bold;
       line-height: 22px;
-      width: 47%;
+      width: 51%;
       margin-bottom: 55px;
+      cursor: pointer;
 
       &.failure {
         color: red;
@@ -43,24 +44,13 @@
         font-size: 14px;
         font-weight: 400;
         line-height: 17px;
-        cursor: pointer;
         background-color: #0e80bf;
         color: white;
+
+        &:hover {
+          background-color: #2594cf;
+        }
       }
-    }
-    .next-button {
-      margin-top: 111px;
-      float: right;
-      height: 48px;
-      width: 151px;
-      border-radius: 4px;
-      background: #6b40e3;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 20px;
-      letter-spacing: 0.08em;
-      cursor: pointer;
     }
   }
 }

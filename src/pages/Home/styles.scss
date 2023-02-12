@@ -51,5 +51,12 @@
     text-decoration: none;
     cursor: pointer;
     z-index: 1;
+
+    &:hover {
+      background-color: #302f2f;
+    }
+    &:focus {
+      background-color: black;
+    }
   }
 }

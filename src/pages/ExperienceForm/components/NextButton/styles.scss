@@ -1,20 +1,18 @@
-.education-form {
+.experience-form {
   .buttons-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 33%;
-    .submit-button {
+    margin-top: 14%;
+    .next-button {
       height: 48px;
       width: 151px;
       border-radius: 4px;
-      background: #6b40e3;
       color: white;
       font-size: 16px;
       font-weight: bold;
       line-height: 20px;
       letter-spacing: 0.08em;
       cursor: pointer;
-
       background: rgba(107, 64, 227, 1);
       &:hover {
         background-color: rgba(121, 73, 255, 1);
