@@ -69,7 +69,7 @@ const App = () => {
               <Route path="ExperienceForm" element={<ExperienceForm />}></Route>
               <Route path="EducationForm" element={<EducationForm />}></Route>
             </Routes>
-            <Persist name="resume-form" />
+            <Persist name="resume-form" debounce={0} />
           </Form>
         </UserContext.Provider>
       )}
