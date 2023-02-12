@@ -55,6 +55,7 @@ const ExperienceForm = ({ hidden }) => {
                   title="აღწერა"
                   placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
                   name={`${name}[description]`}
+                  required
                 />
                 <hr></hr>
               </div>

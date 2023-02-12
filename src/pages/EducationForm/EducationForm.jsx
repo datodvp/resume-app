@@ -51,6 +51,7 @@ const EducationForm = () => {
                   title="აღწერა"
                   placeholder="განათლების აღწერა"
                   name={`${name}[description]`}
+                  required
                 />
                 <hr></hr>
               </div>
