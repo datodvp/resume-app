@@ -93,6 +93,32 @@ $header-color: #f93b1d;
     }
   }
 
+  .education {
+    .title {
+      color: $header-color;
+      margin-bottom: 15px;
+    }
+    .institute-degree {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+      color: #1a1a1a;
+      margin-bottom: 7px;
+    }
+    .date {
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 19px;
+      color: #909090;
+      margin-bottom: 16px;
+    }
+    .description {
+      line-height: 22px;
+      margin-bottom: 40px;
+    }
+  }
+
   .logo {
     position: absolute;
     height: 42px;

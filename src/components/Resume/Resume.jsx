@@ -75,6 +75,33 @@ const Resume = () => {
         })}
       </div>
       {pathname === '/EducationForm' ? <hr></hr> : null}
+      <div className="education">
+        {formik.values.educations.every(
+          (education) =>
+            !education.institute &&
+            !education.degree_id &&
+            !education.due_date &&
+            !education.description
+        ) ? null : (
+          <h2 className="title">განათლება</h2>
+        )}
+        {formik.values.educations.map((value, index) => {
+          return (
+            <div key={index}>
+              {
+                <div className="institute-degree">
+                  {value.institute && `${value.institute}, `}
+                  {value.degree_id && value.degree_id}
+                </div>
+              }
+              <div className="date">{value.due_date && value.due_date}</div>
+              <div className="description">
+                {value.description && value.description}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
