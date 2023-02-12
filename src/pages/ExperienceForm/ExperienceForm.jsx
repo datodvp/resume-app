@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import FormHeader from '../../components/FormHeader';
 import Resume from '../../components/Resume/Resume';
 import TextInput from '../../components/TextInput';
-import { Form } from 'formik';
 import './styles.scss';
 import { UserContext } from '../../context/UserContext';
 import experience from '../../schema/initialValues/experienceValues';

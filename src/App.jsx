@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import PersonForm from './pages/PersonForm';
@@ -9,7 +9,6 @@ import { UserContext } from './context/UserContext';
 import validationSchema from './schema/ValidationSchema';
 import initialValues from './schema/initialValues/initialValues';
 import { Persist } from 'formik-persist';
-import axios from 'axios';
 
 const App = () => {
   const [inputsData, setInputsData] = useState(initialValues);

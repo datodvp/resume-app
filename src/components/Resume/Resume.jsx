@@ -7,7 +7,7 @@ import PhoneImg from '../../assets/images/PhoneImg.png';
 import { useLocation } from 'react-router-dom';
 
 const Resume = () => {
-  const { formik, imagePreview } = useContext(UserContext);
+  const { formik } = useContext(UserContext);
   const { pathname } = useLocation();
   return (
     <div className="resume">

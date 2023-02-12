@@ -4,9 +4,7 @@ import Resume from '../../components/Resume/Resume';
 import TextInput from '../../components/TextInput';
 import ImageInput from './components/ImageInput/ImageInput';
 import TextAreaInput from '../../components/TextAreaInput/TextAreaInput';
-import { Form } from 'formik';
 import NextButton from './components/NextButton/NextButton';
-import { Persist } from 'formik-persist';
 import PhoneInput from './components/PhoneInput';
 
 const PersonForm = ({ hidden }) => {

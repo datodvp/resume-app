@@ -1,5 +1,4 @@
-import { Form } from 'formik';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import DateInput from '../../components/DateInput';
 import FormHeader from '../../components/FormHeader';
 import Resume from '../../components/Resume/Resume';
@@ -10,7 +9,6 @@ import education from '../../schema/initialValues/educationsValues';
 import PersonForm from '../PersonForm';
 import SubmitButton from './components/SubmitButton/SubmitButton';
 import { UserContext } from '../../context/UserContext';
-import { Persist } from 'formik-persist';
 
 import './styles.scss';
 import BackButton from '../../components/BackButton';

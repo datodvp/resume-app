@@ -97,7 +97,7 @@ const validationSchema = Yup.object({
       Yup.object().shape(
         {
           institute: Yup.string().when(
-            ['degree_id', , 'due_date', 'description'],
+            ['degree_id', 'due_date', 'description'],
             {
               is: (degree_id, due_date, description) =>
                 degree_id || due_date || description,
