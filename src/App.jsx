@@ -16,7 +16,6 @@ const App = () => {
 
   const onSubmit = async (values) => {
     const formData = await setFormDataValues(values);
-    console.log(formData);
 
     fetch('https://resume.redberryinternship.ge/api/cvs', {
       method: 'POST', // or 'PUT'
