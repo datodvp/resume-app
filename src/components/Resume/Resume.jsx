@@ -35,9 +35,11 @@ const Resume = () => {
 
         <img
           className="person-img"
-          src={imagePreview}
+          src={formik.values.image}
           alt="person"
-          style={imagePreview ? { display: 'block' } : { display: 'none' }}
+          style={
+            formik.values.image ? { display: 'block' } : { display: 'none' }
+          }
         ></img>
       </div>
       {pathname === '/ExperienceForm' || '/EducationForm' ? <hr></hr> : null}

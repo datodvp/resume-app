@@ -3,7 +3,7 @@ import { Field } from 'formik';
 import { UserContext } from '../../../../context/UserContext';
 
 const ImageInput = () => {
-  const { formik, imagePreview, setImagePreview } = useContext(UserContext);
+  const { formik, setInputsData } = useContext(UserContext);
 
   const handleUploadClick = (e) => {
     const uploadInput = document.querySelector('#getFile');
@@ -14,11 +14,8 @@ const ImageInput = () => {
     const imageFile = event.target.files[0];
     const reader = new FileReader();
     reader.onloadend = (event) => {
-      formik.setFieldValue('image', imageFile);
-      // const oldPersistStorage = JSON.parse(localStorage.getItem('resume-form'));
-      // oldPersistStorage.values.image = imageFile;
-      // console.log(JSON.stringify(oldPersistStorage.values.image));
-      setImagePreview(reader.result);
+      // I used state to update instead of setFieldValue, because state does re-render. setFieldvalue does not.
+      setInputsData({ ...formik.values, image: reader.result });
     };
     reader.readAsDataURL(imageFile);
   };

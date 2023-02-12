@@ -12,22 +12,11 @@ import { Persist } from 'formik-persist';
 import axios from 'axios';
 
 const App = () => {
-  const [imagePreview, setImagePreview] = useState();
+  const [inputsData, setInputsData] = useState(initialValues);
 
-  const onSubmit = (values) => {
-    const formDataHtml = document.querySelector('form');
-    const formData = new FormData(formDataHtml);
-
-    formData.set('image', values.image);
-
-    const phoneNumberFormatted = values.phone_number.replace(/\s/, '');
-    formData.set('phone_number', phoneNumberFormatted);
-
-    // formData.set('experiences[0][position]', 'back-end developer');
-    // formData.set('experiences[0][employer]', 'Redberry');
-    // formData.set('experiences[0][description]', 'პოზიცია');
-    // formData.set('experiences[0][start_date]', '2000-11-11');
-    // formData.set('experiences[0][due_date]', '2000-11-11');
+  const onSubmit = async (values) => {
+    const formData = await setFormDataValues(values);
+    console.log(formData);
 
     fetch('https://resume.redberryinternship.ge/api/cvs', {
       method: 'POST', // or 'PUT'
@@ -45,9 +34,27 @@ const App = () => {
       });
   };
 
+  const setFormDataValues = async (values) => {
+    const formData = new FormData(document.querySelector('form'));
+
+    const phoneNumberFormatted = values.phone_number.replace(/\s/, '');
+    const imageBlobValue = await base64ToBlob(values.image);
+
+    formData.set('phone_number', phoneNumberFormatted);
+    formData.set('image', imageBlobValue);
+
+    return formData;
+  };
+
+  const base64ToBlob = async (value) => {
+    return await fetch(value)
+      .then((res) => res.blob())
+      .then((blob) => blob);
+  };
+
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={inputsData}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
       validateOnChange={true}
@@ -55,7 +62,7 @@ const App = () => {
       enableReinitialize // makes possible to change initial values
     >
       {(formik) => (
-        <UserContext.Provider value={{ formik, imagePreview, setImagePreview }}>
+        <UserContext.Provider value={{ formik, setInputsData }}>
           <Form>
             <Routes>
               <Route path="/" element={<Home />}></Route>
