@@ -11,7 +11,7 @@ import DateInput from '../../components/DateInput';
 import TextAreaInput from '../../components/TextAreaInput/TextAreaInput';
 
 const ExperienceForm = ({ hidden }) => {
-  const formTitle = 'გამოცდილება';
+  const formTitle = 'ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ';
   const formPage = '2/3';
 
   const { formik } = useContext(UserContext);

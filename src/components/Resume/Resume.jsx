@@ -37,7 +37,7 @@ const Resume = ({ response }) => {
             <p className="phone">{data.phone_number}</p>
           </div>
           <div className="about-me-container">
-            {data.about_me && <h2 className="title">ჩემს შესახებ</h2>}
+            {data.about_me && <h2 className="title">ᲩᲔᲛ ᲨᲔᲡᲐᲮᲔᲑ</h2>}
             <p className="about-me">{data.about_me}</p>
           </div>
         </div>
@@ -65,7 +65,7 @@ const Resume = ({ response }) => {
             !experience.due_date &&
             !experience.description
         ) ? null : (
-          <h2 className="title">გამოცდილება</h2>
+          <h2 className="title">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</h2>
         )}
         {data.experiences.map((value, index) => {
           return (
@@ -96,7 +96,7 @@ const Resume = ({ response }) => {
             !education.due_date &&
             !education.description
         ) ? null : (
-          <h2 className="title">განათლება</h2>
+          <h2 className="title">ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</h2>
         )}
         {data.educations.map((value, index) => {
           return (

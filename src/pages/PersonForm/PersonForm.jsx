@@ -8,7 +8,7 @@ import NextButton from './components/NextButton/NextButton';
 import PhoneInput from './components/PhoneInput';
 
 const PersonForm = ({ hidden }) => {
-  const formTitle = 'პირადი ინფო';
+  const formTitle = 'ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ';
   const formPage = '1/3';
 
   return (

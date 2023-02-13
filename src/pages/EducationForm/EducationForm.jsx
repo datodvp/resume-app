@@ -14,7 +14,7 @@ import './styles.scss';
 import BackButton from '../../components/BackButton';
 
 const EducationForm = () => {
-  const formTitle = 'განათლება';
+  const formTitle = 'ᲒᲐᲜᲐᲗᲚᲔᲑᲐ';
   const formPage = '3/3';
 
   const { formik } = useContext(UserContext);
