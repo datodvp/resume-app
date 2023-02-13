@@ -19,7 +19,7 @@ const App = () => {
       initialValues={inputsData}
       validationSchema={validationSchema}
       onSubmit={postData}
-      validateOnChange={true}
+      validateOnChange
       validateOnMount
       enableReinitialize // makes possible to change initial values
     >

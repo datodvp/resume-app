@@ -9,7 +9,7 @@ import education from '../../schema/initialValues/educationsValues';
 import PersonForm from '../PersonForm';
 import SubmitButton from './components/SubmitButton/SubmitButton';
 import { UserContext } from '../../context/UserContext';
-
+import Dropdown from './components/Dropdown';
 import './styles.scss';
 import BackButton from '../../components/BackButton';
 
@@ -37,7 +37,7 @@ const EducationForm = () => {
                   hint="მინიმუმ 2 სიმბოლო"
                 />
                 <div className="degree-due-date">
-                  <TextInput
+                  <Dropdown
                     title="ხარისხი"
                     placeholder="აირჩიეთ ხარისხი"
                     name={`${name}[degree_id]`}

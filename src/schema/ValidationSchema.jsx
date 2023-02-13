@@ -104,12 +104,12 @@ const validationSchema = Yup.object({
               then: Yup.string().required(),
             }
           ),
-          degree_id: Yup.string().when(
+          degree_id: Yup.number().when(
             ['institute', 'due_date', 'description'],
             {
               is: (degree_id, due_date, description) =>
                 degree_id || due_date || description,
-              then: Yup.string().required(),
+              then: Yup.number().moreThan(0).required(),
             }
           ),
 
