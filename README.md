@@ -4,20 +4,20 @@
 
 ```bash
 ── src
-│   ├── api   // api call functions
+│   ├── api   
 │   ├── assets  
-│   ├── components  // global components
-│   │   ├── "componentname" // folder for component
-│   │   │   ├── componentname.jsx // jsx file
+│   ├── components  
+│   │   ├── "componentname" 
+│   │   │   ├── componentname.jsx 
 │   │   │   ├── index.jsx 
-│   │   │   └── styles.scss // styles for component
+│   │   │   └── styles.scss 
 │   ├── context
 │   ├── GlobalStyles.scss
 │   ├── hooks
 │   ├── index.jsx
 │   ├── pages 
-│   │   ├── EducationForm // page component folder
-│   │   │   ├── components // local components for this page
+│   │   ├── EducationForm 
+│   │   │   ├── components 
 │   │   │   │   ├── Dropdown
 │   │   │   │   │   ├── Dropdown.jsx
 │   │   │   │   │   ├── index.jsx
