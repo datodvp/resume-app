@@ -9,8 +9,8 @@
 │   ├── api   
 │   ├── assets  
 │   ├── components  // GLOBAL COMPONENTS
-│   │   ├── "componentname" 
-│   │   │   ├── componentname.jsx 
+│   │   ├── InputField
+│   │   │   ├── InputField.jsx 
 │   │   │   ├── index.jsx 
 │   │   │   └── styles.scss 
 │   ├── context
