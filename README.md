@@ -2,7 +2,7 @@
 
 ## Demo - [Go to live Website](https://resume-app-production.up.railway.app/).
 
-#### Technologies used: [react-router-dom],[formik],[formik-persist],[yup],[sass]
+#### Technologies used: [react][react-router-dom],[formik],[formik-persist],[yup],[sass]
 
 ```bash
 ── src
