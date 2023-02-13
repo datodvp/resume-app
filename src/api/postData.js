@@ -1,5 +1,6 @@
-export const postData = async (values) => {
+export const postData = async (values, navigate) => {
   const formData = await setFormDataValues(values);
+  console.log(values, navigate);
 
   fetch('https://resume.redberryinternship.ge/api/cvs', {
     method: 'POST', // or 'PUT'
@@ -11,6 +12,7 @@ export const postData = async (values) => {
     .then((response) => response.json())
     .then((data) => {
       console.log('Success:', data);
+      navigate('/ResumePage');
     })
     .catch((error) => {
       console.error('Error:', error);

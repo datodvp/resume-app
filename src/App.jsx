@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
 import PersonForm from './pages/PersonForm';
 import ExperienceForm from './pages/ExperienceForm';
 import EducationForm from './pages/EducationForm/EducationForm';
+import ResumePage from './pages/ResumePage/ResumePage';
 import { Form, Formik } from 'formik';
 import { UserContext } from './context/UserContext';
 import validationSchema from './schema/ValidationSchema';
@@ -13,12 +14,16 @@ import { Persist } from 'formik-persist';
 
 const App = () => {
   const [inputsData, setInputsData] = useState(initialValues);
+  const navigate = useNavigate();
 
   return (
     <Formik
       initialValues={inputsData}
       validationSchema={validationSchema}
-      onSubmit={postData}
+      onSubmit={(e) => {
+        // pass naviage as callback to go on last page after data is posted
+        postData(e, navigate);
+      }}
       validateOnChange
       validateOnMount
       enableReinitialize // makes possible to change initial values
@@ -31,6 +36,7 @@ const App = () => {
               <Route path="PersonForm" element={<PersonForm />}></Route>
               <Route path="ExperienceForm" element={<ExperienceForm />}></Route>
               <Route path="EducationForm" element={<EducationForm />}></Route>
+              <Route path="ResumePage" element={<ResumePage />}></Route>
             </Routes>
             <Persist name="resume-form" debounce={0} />
           </Form>
