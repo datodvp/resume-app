@@ -1,28 +1,27 @@
 const initialValues = {
-  name: 'დავით',
-  surname: 'ონიანი',
-  email: 'davitoniani@redberry.ge',
-  phone_number: '+995598123456',
+  name: '',
+  surname: '',
+  email: '',
+  phone_number: '',
   experiences: [
     {
-      position: 'back-end developer',
-      employer: 'Redberry',
-      start_date: '2000-11-11',
-      due_date: '2000-11-11',
-      description: 'Lorem ipsum dolor sit amet, consectetur bibendum.',
+      position: '',
+      employer: '',
+      start_date: '',
+      due_date: '',
+      description: '',
     },
   ],
   educations: [
     {
-      institute: 'თსუ',
+      institute: '',
       degree_id: '',
-      due_date: '2017-06-25',
-      description:
-        'სამართლის ფაკულტეტის მიზანი იყო მიგვეღო ფართო თეორიული ცოდნა სამართლის არსის, სისტემის, ძირითადი პრინციპების, სამართლებრივი სისტემების, ქართული სამართლის ისტორიული წყაროების, კერძო, სისხლის და საჯარო სამართლის სფეროების ძირითადი თეორიების, პრინციპებისა და რეგულირების თავისებურებების შესახებ.',
+      due_date: '',
+      description: '',
     },
   ],
   image: '',
-  about_me: 'ეს არის აღწერა ჩემს შესახებ',
+  about_me: '',
 };
 
 export default initialValues;

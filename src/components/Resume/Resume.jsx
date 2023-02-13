@@ -53,7 +53,9 @@ const Resume = ({ response }) => {
           style={data.image ? { display: 'block' } : { display: 'none' }}
         ></img>
       </div>
-      {pathname === '/ExperienceForm' || '/EducationForm' ? <hr></hr> : null}
+      {pathname === '/ExperienceForm' || pathname === '/EducationForm' ? (
+        <hr></hr>
+      ) : null}
       <div className="experience">
         {data.experiences.every(
           (experience) =>
