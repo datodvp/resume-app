@@ -2,11 +2,13 @@
 
 ## Demo - [Go to live Website](https://resume-app-production.up.railway.app/).
 
+#### Technologies used: [react-router-dom],[formik],[formik-persist],[yup],[sass]
+
 ```bash
 ── src
 │   ├── api   
 │   ├── assets  
-│   ├── components  
+│   ├── components  // GLOBAL COMPONENTS
 │   │   ├── "componentname" 
 │   │   │   ├── componentname.jsx 
 │   │   │   ├── index.jsx 
@@ -17,7 +19,7 @@
 │   ├── index.jsx
 │   ├── pages 
 │   │   ├── EducationForm 
-│   │   │   ├── components 
+│   │   │   ├── components  // LOCAL PAGE COMPONENTS
 │   │   │   │   ├── Dropdown
 │   │   │   │   │   ├── Dropdown.jsx
 │   │   │   │   │   ├── index.jsx
