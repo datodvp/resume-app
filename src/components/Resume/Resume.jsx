@@ -107,7 +107,8 @@ const Resume = ({ response }) => {
                     : value.degree_id &&
                       degrees &&
                       degrees.filter(
-                        (degree) => degree.id == value.degree_id
+                        (degree) =>
+                          Number(degree.id) === Number(value.degree_id)
                       )[0].title}
                 </div>
               }
