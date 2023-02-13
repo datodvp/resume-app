@@ -35,7 +35,7 @@ const Dropdown = ({ name, title }) => {
                   field.onChange(e);
                 }}
               >
-                <option value={0} disabled>
+                <option value={''} disabled>
                   აირჩიეთ ხარისხი
                 </option>
                 {degrees &&

@@ -1,50 +1,61 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import ResumeLogoImg from '../../assets/images/ResumeLogoImg.png';
 import { UserContext } from '../../context/UserContext';
 import './styles.scss';
 import EmailImg from '../../assets/images/EmailImg.png';
 import PhoneImg from '../../assets/images/PhoneImg.png';
+import { getDegrees } from '../../api/getDegrees';
 import { useLocation } from 'react-router-dom';
 
-const Resume = () => {
+const Resume = ({ response }) => {
+  const [degrees, setDegrees] = useState();
   const { formik } = useContext(UserContext);
   const { pathname } = useLocation();
+  const data = response ? response : formik.values;
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getDegrees();
+      setDegrees(data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="resume">
       <img className="logo" src={ResumeLogoImg} alt="resume logo"></img>
       <div className="person">
         <div className="info">
           <h1 className="name-surname">
-            {formik.values.name} {formik.values.surname}
+            {data.name} {data.surname}
           </h1>
           <div className="email-container">
-            {formik.values.email && <img src={EmailImg} alt="email-icon"></img>}
-            <p className="email">{formik.values.email}</p>
+            {data.email && <img src={EmailImg} alt="email-icon"></img>}
+            <p className="email">{data.email}</p>
           </div>
           <div className="phone-container">
-            {formik.values.phone_number && (
-              <img src={PhoneImg} alt="phone-icon"></img>
-            )}
-            <p className="phone">{formik.values.phone_number}</p>
+            {data.phone_number && <img src={PhoneImg} alt="phone-icon"></img>}
+            <p className="phone">{data.phone_number}</p>
           </div>
           <div className="about-me-container">
-            {formik.values.about_me && <h2 className="title">ჩემს შესახებ</h2>}
-            <p className="about-me">{formik.values.about_me}</p>
+            {data.about_me && <h2 className="title">ჩემს შესახებ</h2>}
+            <p className="about-me">{data.about_me}</p>
           </div>
         </div>
 
         <img
           className="person-img"
-          src={formik.values.image}
-          alt="person"
-          style={
-            formik.values.image ? { display: 'block' } : { display: 'none' }
+          src={
+            response
+              ? `https://resume.redberryinternship.ge${data.image}`
+              : data.image
           }
+          alt="person"
+          style={data.image ? { display: 'block' } : { display: 'none' }}
         ></img>
       </div>
       {pathname === '/ExperienceForm' || '/EducationForm' ? <hr></hr> : null}
       <div className="experience">
-        {formik.values.experiences.every(
+        {data.experiences.every(
           (experience) =>
             !experience.position &&
             !experience.employer &&
@@ -54,7 +65,7 @@ const Resume = () => {
         ) ? null : (
           <h2 className="title">გამოცდილება</h2>
         )}
-        {formik.values.experiences.map((value, index) => {
+        {data.experiences.map((value, index) => {
           return (
             <div key={index}>
               {
@@ -76,7 +87,7 @@ const Resume = () => {
       </div>
       {pathname === '/EducationForm' ? <hr></hr> : null}
       <div className="education">
-        {formik.values.educations.every(
+        {data.educations.every(
           (education) =>
             !education.institute &&
             !education.degree_id &&
@@ -85,13 +96,19 @@ const Resume = () => {
         ) ? null : (
           <h2 className="title">განათლება</h2>
         )}
-        {formik.values.educations.map((value, index) => {
+        {data.educations.map((value, index) => {
           return (
             <div key={index}>
               {
                 <div className="institute-degree">
                   {value.institute && `${value.institute}, `}
-                  {value.degree_id && value.degree_id}
+                  {response
+                    ? value.degree
+                    : value.degree_id &&
+                      degrees &&
+                      degrees.filter(
+                        (degree) => degree.id == value.degree_id
+                      )[0].title}
                 </div>
               }
               <div className="date">{value.due_date && value.due_date}</div>

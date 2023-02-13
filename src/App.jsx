@@ -14,6 +14,7 @@ import { Persist } from 'formik-persist';
 
 const App = () => {
   const [inputsData, setInputsData] = useState(initialValues);
+  const [response, setResponse] = useState();
   const navigate = useNavigate();
 
   return (
@@ -22,7 +23,7 @@ const App = () => {
       validationSchema={validationSchema}
       onSubmit={(e) => {
         // pass naviage as callback to go on last page after data is posted
-        postData(e, navigate);
+        postData(e, navigate, setResponse);
       }}
       validateOnChange
       validateOnMount
@@ -36,7 +37,10 @@ const App = () => {
               <Route path="PersonForm" element={<PersonForm />}></Route>
               <Route path="ExperienceForm" element={<ExperienceForm />}></Route>
               <Route path="EducationForm" element={<EducationForm />}></Route>
-              <Route path="ResumePage" element={<ResumePage />}></Route>
+              <Route
+                path="ResumePage"
+                element={<ResumePage response={response} />}
+              ></Route>
             </Routes>
             <Persist name="resume-form" debounce={0} />
           </Form>

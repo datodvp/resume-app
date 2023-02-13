@@ -5,7 +5,7 @@ import { UserContext } from '../../context/UserContext';
 import initialValues from '../../schema/initialValues/initialValues';
 import './styles.scss';
 
-const ResetButton = () => {
+const ResetButton = ({ grey }) => {
   const { formik, setInputsData } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -16,7 +16,12 @@ const ResetButton = () => {
     navigate('/');
   };
   return (
-    <button type="button" className="reset-button" onClick={handleClick}>
+    <button
+      type="button"
+      className="reset-button"
+      onClick={handleClick}
+      style={grey && { backgroundColor: '#F9F9F9' }}
+    >
       <img src={BackArrowImg} alt="back button"></img>
     </button>
   );
