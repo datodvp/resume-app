@@ -1,4 +1,4 @@
-# This App Can Create a Resume For you. Unless You Ain't Lazy
+# Documentation (a little bit)
 
 ## Demo - [Go to live Website](https://resume-app-production.up.railway.app/).
 
