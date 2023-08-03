@@ -23,14 +23,14 @@ const PersonForm = ({ hidden }) => {
             title="სახელი"
             name="name"
             placeholder="ანზორი"
-            hint="მინიმუმ 2 ასო, ქართული ასოები"
+            hint="მინიმუმ 2 ასო"
             size="small"
           />
           <TextInput
             title="გვარი"
             name="surname"
             placeholder="მუმლაძე"
-            hint="მინიმუმ 2 ასო, ქართული ასოები"
+            hint="მინიმუმ 2 ასო"
             size="small"
           />
         </div>
@@ -44,7 +44,6 @@ const PersonForm = ({ hidden }) => {
           title="ელ.ფოსტა"
           name="email"
           placeholder="anzori@redberry.ge"
-          hint="უნდა მთავრდებოდეს @redberry.ge-ით"
           size="large"
         />
         <PhoneInput
