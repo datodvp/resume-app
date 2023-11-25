@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { getDegrees } from '../../../../api/getDegrees';
 import { Field } from 'formik';
 import './styles.scss';
 
 const Dropdown = ({ name, title }) => {
-  const [degrees, setDegrees] = useState();
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getDegrees();
-      setDegrees(data);
-    };
-    fetchData();
-  }, []);
+  const degrees = [
+    {
+      id: 0,
+      title: "Bachelor's degree",
+    },
+    {
+      id: 2,
+      title: "Masters's degree",
+    },
+    {
+      id: 3,
+      title: 'Doctorate',
+    },
+  ];
 
   return (
     <Field name={name}>
@@ -36,7 +40,7 @@ const Dropdown = ({ name, title }) => {
                 }}
               >
                 <option value={''} disabled>
-                  აირჩიეთ ხარისხი
+                  Choose Degree
                 </option>
                 {degrees &&
                   degrees.map((degree) => {

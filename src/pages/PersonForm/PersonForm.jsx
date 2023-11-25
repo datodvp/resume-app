@@ -8,7 +8,7 @@ import NextButton from './components/NextButton/NextButton';
 import PhoneInput from './components/PhoneInput';
 
 const PersonForm = ({ hidden }) => {
-  const formTitle = 'ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ';
+  const formTitle = 'Personal Information';
   const formPage = '1/3';
 
   return (
@@ -20,37 +20,36 @@ const PersonForm = ({ hidden }) => {
         <FormHeader title={formTitle} page={formPage} />
         <div className="name-surname">
           <TextInput
-            title="სახელი"
+            title="Firstname"
             name="name"
-            placeholder="ანზორი"
-            hint="მინიმუმ 2 ასო"
+            placeholder="John"
+            hint="At least 2 symbols"
             size="small"
           />
           <TextInput
-            title="გვარი"
+            title="Lastname"
             name="surname"
-            placeholder="მუმლაძე"
-            hint="მინიმუმ 2 ასო"
+            placeholder="Doe"
+            hint="At least 2 symbols"
             size="small"
           />
         </div>
         <ImageInput />
         <TextAreaInput
-          title="ჩემს შესახებ (არასავალდებულო)"
-          placeholder="ზოგადი ინფო შენს შესახებ"
+          title="About me"
+          placeholder="I am ect."
           name="about_me"
         />
         <TextInput
-          title="ელ.ფოსტა"
+          title="Email"
           name="email"
           placeholder="anzori@redberry.ge"
           size="large"
         />
         <PhoneInput
-          title="მობილურის ნომერი"
+          title="Phone Number"
           name="phone_number"
           placeholder="+995 551 12 34 56"
-          hint="უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს"
         />
         <NextButton />
       </div>

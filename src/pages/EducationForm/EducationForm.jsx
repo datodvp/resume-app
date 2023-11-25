@@ -14,7 +14,7 @@ import './styles.scss';
 import BackButton from '../../components/BackButton';
 
 const EducationForm = () => {
-  const formTitle = 'ᲒᲐᲜᲐᲗᲚᲔᲑᲐ';
+  const formTitle = 'Education';
   const formPage = '3/3';
 
   const { formik } = useContext(UserContext);
@@ -31,25 +31,22 @@ const EducationForm = () => {
             return (
               <div key={index}>
                 <TextInput
-                  title="სასწავლებელი"
+                  title="School"
                   name={`${name}[institute]`}
-                  placeholder="სასწავლებელი"
-                  hint="მინიმუმ 2 სიმბოლო"
+                  placeholder="Harward..."
+                  hint="At least 2 symbols"
                 />
                 <div className="degree-due-date">
                   <Dropdown
-                    title="ხარისხი"
-                    placeholder="აირჩიეთ ხარისხი"
+                    title="Degree"
+                    placeholder="Choose Degree"
                     name={`${name}[degree_id]`}
                   />
-                  <DateInput
-                    title="დამთავრების რიცხვი"
-                    name={`${name}[due_date]`}
-                  />
+                  <DateInput title="End Date" name={`${name}[due_date]`} />
                 </div>
                 <TextAreaInput
-                  title="აღწერა"
-                  placeholder="განათლების აღწერა"
+                  title="Description"
+                  placeholder="I learnt about..."
                   name={`${name}[description]`}
                   required
                 />
@@ -67,7 +64,7 @@ const EducationForm = () => {
             ]);
           }}
         >
-          მეტი სასწავლებლის დამატება
+          Add More Education
         </button>
         <div className="buttons-container">
           <BackButton path={'/ExperienceForm'} />

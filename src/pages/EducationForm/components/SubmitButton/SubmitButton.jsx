@@ -12,7 +12,7 @@ const SubmitButton = () => {
         formik.handleSubmit();
       }}
     >
-      დასრულება
+      Finish
     </button>
   );
 };

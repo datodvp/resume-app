@@ -44,7 +44,7 @@ const NextButton = () => {
           });
       }}
     >
-      შემდეგი
+      Next
     </button>
   );
 };

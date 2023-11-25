@@ -11,7 +11,7 @@ import DateInput from '../../components/DateInput';
 import TextAreaInput from '../../components/TextAreaInput/TextAreaInput';
 
 const ExperienceForm = ({ hidden }) => {
-  const formTitle = 'ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ';
+  const formTitle = 'Experience';
   const formPage = '2/3';
 
   const { formik } = useContext(UserContext);
@@ -30,30 +30,24 @@ const ExperienceForm = ({ hidden }) => {
             return (
               <div key={index}>
                 <TextInput
-                  title="თანამდებობა"
+                  title="Position"
                   name={`${name}[position]`}
-                  placeholder="თანამდებობა"
-                  hint="მინიმუმ 2 სიმბოლო"
+                  placeholder="Software Engineer"
+                  hint="At least 2 symbols"
                 />
                 <TextInput
-                  title="დამსაქმებელი"
+                  title="Employer"
                   name={`${name}[employer]`}
-                  placeholder="დამსაქმებელი"
-                  hint="მინიმუმ 2 სიმბოლო"
+                  placeholder="Facebook"
+                  hint="At least 2 symbols"
                 />
                 <div className="start-end-date-container">
-                  <DateInput
-                    title="დაწყების რიცხვი"
-                    name={`${name}[start_date]`}
-                  />
-                  <DateInput
-                    title="დამთავრების რიცხვი"
-                    name={`${name}[due_date]`}
-                  />
+                  <DateInput title="Start Date" name={`${name}[start_date]`} />
+                  <DateInput title="End Date" name={`${name}[due_date]`} />
                 </div>
                 <TextAreaInput
-                  title="აღწერა"
-                  placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
+                  title="Description"
+                  placeholder="Your job description..."
                   name={`${name}[description]`}
                   required
                 />
@@ -71,7 +65,7 @@ const ExperienceForm = ({ hidden }) => {
             ]);
           }}
         >
-          მეტი გამოცდილების დამატება
+          Add More Experience
         </button>
         <div className="buttons-container">
           <BackButton path={'/PersonForm'} />

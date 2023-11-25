@@ -29,11 +29,14 @@
     z-index: 1;
   }
 
-  .redberry-img {
+  > .logo {
     position: absolute;
     top: 25px;
     left: 70px;
     z-index: 1;
+    font-weight: 900;
+    font-size: 43px;
+    color: #e93904;
   }
 
   .button {

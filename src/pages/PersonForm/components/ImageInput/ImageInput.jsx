@@ -26,7 +26,7 @@ const ImageInput = () => {
         formik.touched.image && formik.errors.image ? 'failure' : 'success'
       }`}
     >
-      პირადი ფოტოს ატვირთვა
+      Upload your Image
       <button type="button" onClick={handleUploadClick}>
         ატვირთვა
       </button>

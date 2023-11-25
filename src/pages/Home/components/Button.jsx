@@ -12,7 +12,7 @@ const Button = () => {
         navigate('/PersonForm');
       }}
     >
-      რეზიუმეს დამატება
+      Create Your Resume
     </button>
   );
 };

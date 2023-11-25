@@ -2,17 +2,15 @@ import * as Yup from 'yup';
 
 const validationSchema = Yup.object({
   name: Yup.string()
-    .matches(/^([ა-ჰa-zA-Z]){2,}$/, 'მინიმუმ 2 ასო')
+    .matches(/^([ა-ჰa-zA-Z]){2,}$/, 'at least 2 symbols')
     .required(),
   surname: Yup.string()
-    .matches(/^([ა-ჰa-zA-Z]){2,}$/, 'მინიმუმ 2 ასო')
+    .matches(/^([ა-ჰa-zA-Z]){2,}$/, 'at least 2 symbols')
     .required(),
   image: Yup.mixed().required(),
   about_me: Yup.string(),
-  email: Yup.string().required(),
-  phone_number: Yup.string()
-    .matches(/^(\+995\s?)(5\d{2})\s?\d{2}\s?\d{2}\s?\d{2}$/)
-    .required(),
+  email: Yup.string().email().required(),
+  phone_number: Yup.number().required(),
   experiences: Yup.array()
     .of(
       Yup.object().shape(
@@ -107,7 +105,7 @@ const validationSchema = Yup.object({
             {
               is: (degree_id, due_date, description) =>
                 degree_id || due_date || description,
-              then: Yup.number().moreThan(0).required(),
+              then: Yup.number().required(),
             }
           ),
 

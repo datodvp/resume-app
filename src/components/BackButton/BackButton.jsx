@@ -12,7 +12,7 @@ const BackButton = ({ path }) => {
         navigate(path);
       }}
     >
-      უკან
+      Back
     </button>
   );
 };
