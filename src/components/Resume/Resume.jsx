@@ -54,7 +54,7 @@ const Resume = ({ response }) => {
 
   return (
     <>
-      <button onClick={downloadPDF} className="pdf-button">
+      <button onClick={downloadPDF} type="button" className="pdf-button">
         Export PDF
       </button>
       <div className="resume" ref={pdfContent}>

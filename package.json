@@ -6,11 +6,12 @@
     "formik": "^2.2.9",
     "formik-persist": "^1.1.0",
     "html2canvas": "^1.4.1",
+    "html2pdf": "^0.0.11",
     "jspdf": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "sass": "^1.58.0",
     "yup": "^0.32.11"
   },
