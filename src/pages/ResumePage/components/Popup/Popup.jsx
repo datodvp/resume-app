@@ -14,7 +14,7 @@ const Popup = () => {
         onClick={handleClick}
         alt="close"
       />
-      <div className="content">რეზიუმე წარმატებით გაიგზავნა 🎉</div>
+      <div className="content">Its final look. 🎉</div>
     </div>
   );
 };

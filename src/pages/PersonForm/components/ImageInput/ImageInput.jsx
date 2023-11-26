@@ -28,7 +28,7 @@ const ImageInput = () => {
     >
       Upload your Image
       <button type="button" onClick={handleUploadClick}>
-        ატვირთვა
+        Upload
       </button>
       <Field name="image">
         {({ field, form }) => (
